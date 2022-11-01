@@ -1,7 +1,7 @@
 # Ohjelmistotekniikka, harjoitustyö
 
 ## Tehtävät
-jonka alla on myös lisää tekstiä
+jonka alla on myös lisää tekstiä muutos
 
 ### Viikko 1
 
