@@ -1,16 +1,17 @@
-#Ohjelmistotekniikka, harjoitustyö
+# Ohjelmistotekniikka, harjoitustyö
 
-##Tehtävät
+## Tehtävät
 jonka alla on myös lisää tekstiä
 
-###otsikko1.1
+### Viikko 1
 
-tekstiä
+[gitlog.txt](https://github.com/suitsuke/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+[komentorivi.txt](https://github.com/suitsuke/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-###otsikko1.2
+### Viikko 2
 
 tekstiä ja ehkä rivin vaiho
 haluttiin myös *italisoitua* tekstiä eli siis **kursiivia** ja lihavoitua
 
-##otsikko2
+## otsikko2
 tekstiä lisää
