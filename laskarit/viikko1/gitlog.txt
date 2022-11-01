@@ -1,0 +1,96 @@
+
+commit 573a025a3b1368acd01f05596335abefa3673963
+Author: Tia Toppari <suicuazul@gmail.com>
+Date:   Tue Nov 1 15:21:22 2022 +0200
+
+    tiedostomuutoksia
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3ddff65dd7691b860f1eaf9aa7cf73d12dd6d026
+Author: Tia Toppari <suicuazul@gmail.com>
+Date:   Tue Nov 1 15:18:47 2022 +0200
+
+    tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 966e0ff5ca86f9f981bca40691cd7c3fa7f6f03f
+Author: Tia Toppari <suicuazul@gmail.com>
+Date:   Tue Nov 1 15:11:39 2022 +0200
+
+    nimenmuutos
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f7020c300322471f85ed409bd3e8ad3dae4e6d5e
+Author: Tia Toppari <suicuazul@gmail.com>
+Date:   Tue Nov 1 15:08:21 2022 +0200
+
+    poistettiin toinen.txt
+
+ tiedosto.txt | 15 ++++++++++++++-
+ toinen.txt   | 14 --------------
+ 2 files changed, 14 insertions(+), 15 deletions(-)
+
+commit 0b5591957b9d851a6dda0771cd3d69080405f6d0
+Author: Tia Toppari <suicuazul@gmail.com>
+Date:   Tue Nov 1 14:04:58 2022 +0200
+
+    puukaavio lisätty toinen.txt sisälle
+
+ toinen.txt | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+commit af0d521013777413d351bd1551e5e394a21c83f9
+Author: Tia Toppari <suicuazul@gmail.com>
+Date:   Tue Nov 1 13:53:58 2022 +0200
+
+    uusi kansio
+
+ stuff/tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 50fef651365a1d51fae2018870ee920562105d1f
+Author: Tia Toppari <suicuazul@gmail.com>
+Date:   Tue Nov 1 13:53:17 2022 +0200
+
+    muokkauksia
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit fe63115007715edab4cfd79da073324c24f51d2b
+Author: Tia Toppari <suicuazul@gmail.com>
+Date:   Tue Nov 1 13:52:13 2022 +0200
+
+    lisätty kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit fde8ef196d2844c7fdae6a1245c33a79d9611a64
+Author: Tia Toppari <suicuazul@gmail.com>
+Date:   Tue Nov 1 13:48:20 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 47039a27cda264169fdb470d1548f3e610ec3278
+Author: Tia Toppari <suicuazul@gmail.com>
+Date:   Tue Nov 1 13:45:40 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
