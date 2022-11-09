@@ -17,6 +17,8 @@ jokaisella käyttäjällä on eri historia ja tarrakokoelma.
 
 ## Käyttöliittymä
 
+[TODO]
+
 ## Perusversion toiminnallisuus
 
 ### Ennen kirjautumista
