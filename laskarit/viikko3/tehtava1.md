@@ -22,6 +22,12 @@ classDiagram
 	Normaalit kadut "1" --> "0-4" Talo
 	Normaalit kadut "1" --> "0-1" Hotelli
 	Pelaaja --> "*" Raha
+	Toiminto <-- Yhteismaa
+	Toiminto <-- Sattuma
+	Toiminto <-- Aloitusruutu
+	Toiminto <-- Vankilaruutu
+	Toiminto <-- Asemat ja laitokset
+	Toiminto <-- Normaalit kadut
 	
 	
 class Ruutu{
