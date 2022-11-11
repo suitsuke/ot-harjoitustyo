@@ -23,10 +23,27 @@ deactivate laitehallinto
 participant lippu_luukku
 main ->> lippu_luukku: Kioski()
 participant kallen_kortti
-lippu_luukku ->> kallen_kortti: osta_matkakortti(kallen_kortti, None)
+main ->> lippu_luukku: osta_matkakortti("Kalle", None)
+lippu_luukku ->> kallen_kortti:Matkakortti.__init__("Kalle")
 activate kallen_kortti
-
-
 deactivate kallen_kortti
+
+main ->> rautatietori:lataa_arvoa(kallen_kortti, 3)
+activate rautatietori
+rautatietori ->> kallen_kortti: kasvata_arvoa(3)
+activate kallen_kortti
+deactivate kallen_kortti
+deactivate rautatietori
+
+main ->> ratikka6: osta_lippu(kallen_kortti, 0)
+activate ratikka6
+ratikka6 ->> kallen_kortti: vahenna_arvoa(1.5)
+activate kallen_kortti
+deactivate kallen_kortti
+ratikka6 -->> main: True
+deactivate ratikka6
+
+
+bussi244 ->> kallen_kortti: osta_lippu(kallen_kortti, 2)
 
 deactivate main
