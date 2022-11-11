@@ -12,6 +12,8 @@ sequenceDiagram
 	Machine ->> Engine: __init__(FuelTank)
 	*->>Machine:drive()
 	Machine ->> Engine:start()
+	Machine ->> Engine:_engine_is_running()
+	Machine <-- Engine:True
 	
 
 	
