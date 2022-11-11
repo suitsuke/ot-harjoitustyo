@@ -6,6 +6,8 @@ classDiagram
 	Pelaaja "1" --> "1" Pelinappula 
 	Pelinappula "*" --> "1" Ruutu
 	Pelilauta"1" --> "40" Ruutu
+	Monopoli --> "1" Pelilauta
+	Monopoli --> "2" Noppa
 	
 class Ruutu{
 	seuraava ruutu
@@ -16,6 +18,4 @@ class Pelaaja{
 class Pelinappula{
 	väri
 	}
-class Pelilauta{
-	monopoli
-	}
+
