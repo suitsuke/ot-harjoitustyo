@@ -18,6 +18,7 @@ jokaisella käyttäjällä on eri historia ja tarrakokoelma.
 ## Käyttöliittymä
 
 [TODO]
+![image](kayttoliittyma.jpeg)
 
 ## Perusversion toiminnallisuus
 
