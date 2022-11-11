@@ -13,7 +13,7 @@ sequenceDiagram
 	*->>Machine:drive()
 	Machine ->> Engine:start()
 	Machine ->> Engine:_engine_is_running()
-	Engine --> Machine :True
+	Engine -->> Machine :True
 	
 
 	
