@@ -44,6 +44,14 @@ ratikka6 -->> main: True
 deactivate ratikka6
 
 
-bussi244 ->> kallen_kortti: osta_lippu(kallen_kortti, 2)
+main ->> bussi244: osta_lippu(kallen_kortti, 2)
+activate bussi244
+bussi244 ->> kallen_kortti: arvo
+activate kallen_kortti
+kallen_kortti -->> bussi244: 1.5
+deactivate kallen_kortti
+bussi244 -->> main: False
+deactivate bussi244
+
 
 deactivate main
