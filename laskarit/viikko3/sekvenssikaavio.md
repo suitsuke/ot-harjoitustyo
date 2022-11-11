@@ -27,6 +27,7 @@ sequenceDiagram
 	activate Engine
 	Engine ->> FuelTank:consume(10)
 	deactivate Engine
+	deactivate Machine
 	
 	
 
