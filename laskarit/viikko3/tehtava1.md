@@ -14,20 +14,15 @@ classDiagram
 	Ruutu --> Sattuma
 	Ruutu --> Aloitusruutu
 	Ruutu --> Vankilaruutu
-	Ruutu --> Asemat ja laitokset
-	Ruutu --> Normaalit kadut
+	Ruutu --> Asemat_ja_laitokset
+	Ruutu --> Normaalit_kadut
 	Sattuma --> "*" Kortti
 	Yhteismaa --> "*" Kortti
 	Normaalit kadut "*" --> "0-1" Pelaaja
 	Normaalit kadut "1" --> "0-4" Talo
 	Normaalit kadut "1" --> "0-1" Hotelli
 	Pelaaja --> "*" Raha
-	Toiminto <-- Yhteismaa
-	Toiminto <-- Sattuma
-	Toiminto <-- Aloitusruutu
-	Toiminto <-- Vankilaruutu
-	Toiminto <-- Asemat ja laitokset
-	Toiminto <-- Normaalit kadut
+
 	
 	
 class Ruutu{
@@ -39,7 +34,22 @@ class Pelaaja{
 class Pelinappula{
 	väri
 	}
-class Normaalit kadut{
+class Normaalit_kadut{
 	nimi
+	toiminto
 	}
-
+class Sattuma{
+	toiminto
+	}
+class Yhteismaa{
+	toiminto
+	}
+class Asemat_ja_laitokset{
+	toiminto
+	}
+class Vankilaruutu{
+	toiminto
+	}
+class Aloitusruutu{
+	toiminto
+	}
