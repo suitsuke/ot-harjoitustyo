@@ -11,12 +11,15 @@ sequenceDiagram
 	activate FuelTank
 	Machine->>FuelTank:fill(40)
 	deactivate FuelTank
+
 	participant Engine
 	Machine ->> Engine: __init__(FuelTank)
+	deactivate Machine
 	*->>Machine:drive()
+	activate Machine
 	Machine ->> Engine:start()
-	Machine ->> Engine:_engine_is_running()
 	activate Engine
+	Machine ->> Engine:_engine_is_running()
 	Engine ->> FuelTank:fuel_contents()
 	activate FuelTank
 	FuelTank -->> Engine: 40
