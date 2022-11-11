@@ -8,6 +8,7 @@ sequenceDiagram
 	participant FuelTank
 	Machine ->> FuelTank:__init__()
 	Machine->>Fueltank:fill(40)
+	participant Engine
 	Machine ->> Engine(FuelTank)
 	*->>Machine:drive()
 	Machine ->> Engine:start()
