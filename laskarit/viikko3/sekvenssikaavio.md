@@ -13,7 +13,12 @@ sequenceDiagram
 	*->>Machine:drive()
 	Machine ->> Engine:start()
 	Machine ->> Engine:_engine_is_running()
+	Engine ->> FuelTank:fuel_contents()
+	FuelTank -->> Engine: 40
 	Engine -->> Machine :True
+	Machine ->> Engine: use_energy()
+	Engine ->> FuelTank:consume(10)
+	
 	
 
 	
