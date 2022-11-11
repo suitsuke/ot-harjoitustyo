@@ -2,7 +2,7 @@
 
 ## Sovelluksen tarkoitus
 
-Sovelluksen avulla käyttäjä voi kerätä suorituskertoja erilaisista onnistuneista arjen 
+Yksinkertainen tehtäväseuranta. Sovelluksen avulla käyttäjä voi kerätä suorituskertoja erilaisista onnistuneista arjen 
 askareista, kuten siististi syöminen, hampaiden pesu, pukeutuminen, nukkumaan meneminen. 
 Jokaisesta suorituskerrasta saa satunnaisesti (tai puolisatunnaisesti) valitun tarran jota 
 ei vielä ole aiemmin saanut tarrakirjaan.
@@ -35,6 +35,8 @@ jokaisella käyttäjällä on eri historia ja tarrakokoelma.
 - Käyttäjä voi valita askareen jota suoritetaan klikkaamalla
 - Suorituksesta saa merkin kirjaan/kalenteriin, ja (puoli)satunnaisesti valitun tarran joka 
 lisätään tarrakirjaan
+- Käyttäjän keräämät tarrat (numeroitu) ja niiden tekstikuvaus tallennetaan tietokantaan.
+- Tarrat on omassa tietokannassa ja toinen tietokanta pitää huolen mikä käyttäjä (id) on kerännyt mitkäkin tarrat.
 - Käyttäjä voi avata tarrakirjan, josta näkee kaikki kerätyt tarrat
 - Käyttäjä voi avata kalenterin josta näkee värikoodattuna eri suoritetut askareet 
 päivämäärän ja ajan mukaan
