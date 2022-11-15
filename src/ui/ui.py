@@ -1,8 +1,10 @@
 from tkinter import Tk
+
+from collection_view import CollectionView
 from login_view import LoginView
 from menu_view import MenuView
-from collection_view import CollectionView
 from settings_view import SettingsView
+
 
 class UI:
     def __init__(self, root):
@@ -35,8 +37,7 @@ class UI:
         self._current_view = LoginView(
             self._root,
             self._handle_menu
-        )
-
+            )
         self._current_view.pack()
     
     def _show_menu_view(self):
