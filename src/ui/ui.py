@@ -1,9 +1,9 @@
 from tkinter import Tk
 
-from collection_view import CollectionView
-from login_view import LoginView
-from menu_view import MenuView
-from settings_view import SettingsView
+from ui.collection_view import CollectionView
+from ui.login_view import LoginView
+from ui.menu_view import MenuView
+from ui.settings_view import SettingsView
 
 
 class UI:
@@ -31,6 +31,7 @@ class UI:
     
     def _handle_settings(self):
         self._show_settings_view()
+    
 
     def _show_login_view(self):
         self._hide_current_view()
@@ -68,10 +69,10 @@ class UI:
         )
         self._current_view.pack()
 
-window = Tk()
-window.title("TkInter example")
+#window = Tk()
+#window.title("StickerS")
 
-ui = UI(window)
-ui.start()
+#ui = UI(window)
+#ui.start()
 
-window.mainloop()
+#window.mainloop()
