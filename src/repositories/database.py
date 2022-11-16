@@ -1,8 +1,9 @@
-import sqlite3
 import os
+import sqlite3
 
 db = sqlite.connect("users_stickers.db")
 db.isolation_level = None
+pass
 
 #userstickers.db
 #contains references on which user_id has which sticker_id

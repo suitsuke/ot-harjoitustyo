@@ -21,7 +21,7 @@ class StickersRepository:
         #adds sticker ownership to a user if they don't already have it
         self.db.execute("INSERT INTO UserStickers (user_id, sticker_id) VALUES (?, ?)", [user_id, sticker_id])
         
-        #returns what was just put in, in a tuple
+        #returns what was just put in, in a
         id = self.db.execute("SELECT UserStickers.user_id, UserStickers.sticker_id from UserStickers WHERE UserStickers.user_id=? AND UserSticker.sticker_id=?", [user_id, sticker_id]).fetchone()    
         return id
 
