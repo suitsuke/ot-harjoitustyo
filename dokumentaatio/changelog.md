@@ -4,6 +4,6 @@
 
 - Käyttöliittymä aloitettu
 - Menut (login, main menu, collection, settings, tarrojenhankintanapit) olemassa
-- Tietokantoja aloitettu
+- Tietokantoja aloitettu, tietokantojen ekat testaukset toimii
 
 ## Viikko 4
