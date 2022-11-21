@@ -1,18 +1,69 @@
 # Ohjelmistotekniikka, harjoitustyö
 
-## Tehtävät
-jonka alla on myös lisää tekstiä muutos
+## Stickers app
 
-### Viikko 1
+Sovelluksen avulla käyttäjä voi kerätä tarroja suoritetuista arkiaskareista. Sovellusta voi käyttää muutama käyttäjä, ja kaikilla on oma tarrakokoelmansa.
 
-[gitlog.txt](https://github.com/suitsuke/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+Sovellus on kehitetty harjoitustyöksi Helsingin yliopiston Ohjelmistotekniikan kurssille syksyllä 2022.
 
-[komentorivi.txt](https://github.com/suitsuke/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-### Viikko 2
+### Huomio Python-versiosta
 
-tekstiä ja ehkä rivin vaiho
-haluttiin myös *italisoitua* tekstiä eli siis **kursiivia** ja lihavoitua
+Ohjelmaa on testattu ja kehitetty versiolla 3.11. Vanhemmat versiot saattavat aiheuttaa ongelmia erityisesti tkinter-moduulin ja invoken kanssa.
 
-## otsikko2
-muutos tekstiä lisää
+## Dokumentaatio
+
+- Käyttöohje
+- [Vaatimusmäärittely](dokumentaatio/vaatimusmaarittely.md)
+- Arkkitehtuurikuvaus
+- Testausdokumentti
+- [Työaikakirjanpito](dokumentaatio/tuntikirjanpito.md)
+- [Changelog](dokumentaatio/changelog.md)
+
+## Asennus
+
+1. Asenna riippuvuudet komennolla:
+
+```bash
+poetry install
+```
+
+2. Suorita vaadittavat alustustoimenpiteet komennolla:
+
+```bash
+poetry run invoke build
+```
+
+3. Käynnistä sovellus komennolla:
+
+```bash
+poetry run invoke start
+```
+
+## Komentorivitoiminnot
+
+### Ohjelman suorittaminen
+
+Ohjelman pystyy suorittamaan komennolla:
+
+```bash
+poetry run invoke start
+```
+
+### Testaus
+
+Testit suoritetaan komennolla:
+
+```bash
+poetry run invoke test
+```
+
+### Testikattavuus
+
+Testikattavuusraportin voi generoida komennolla:
+
+```bash
+poetry run invoke coverage-report
+```
+
+Raportti generoituu _htmlcov_-hakemistoon.
