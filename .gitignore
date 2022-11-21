@@ -6,6 +6,8 @@ htmlcov
 __pycache__
 **/__pycache__
 **/.DS_Store
+*.py[cod]
+*$py.class
 
 #data files
 data/userstickers.db
