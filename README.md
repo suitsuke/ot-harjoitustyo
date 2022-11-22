@@ -22,19 +22,13 @@ Ohjelmaa on testattu ja kehitetty versiolla 3.11.0. Vanhemmat versiot saattavat 
 
 ## Asennus
 
-1. Asenna ensiksi riippuvuudet:
+1. Asenna ensiksi riippuvuudet (kansiossa jossa on pyproject.toml):
 
 ```bash
 poetry install
 ```
 
-2. Suorita seuraavaksi alustukset:
-
-```bash
-poetry run invoke build
-```
-
-3. Lopulta voit käynnistää sovelluksen:
+2. Käynnistä sovellus:
 
 ```bash
 poetry run invoke start
