@@ -9,32 +9,32 @@ Sovellus on kehitetty harjoitustyöksi Helsingin yliopiston Ohjelmistotekniikan 
 
 ### Huomio Python-versiosta
 
-Ohjelmaa on testattu ja kehitetty versiolla 3.11. Vanhemmat versiot saattavat aiheuttaa ongelmia erityisesti tkinter-moduulin ja invoken kanssa.
+Ohjelmaa on testattu ja kehitetty versiolla 3.11.0. Vanhemmat versiot saattavat aiheuttaa ongelmia erityisesti tkinter-moduulin ja invoken kanssa.
 
 ## Dokumentaatio
 
-- Käyttöohje
+- Käyttöohje (tulossa)
 - [Vaatimusmäärittely](dokumentaatio/vaatimusmaarittely.md)
-- Arkkitehtuurikuvaus
-- Testausdokumentti
+- Arkkitehtuurikuvaus (tulossa)
+- Testausdokumentti (tulossa)
 - [Työaikakirjanpito](dokumentaatio/tuntikirjanpito.md)
 - [Changelog](dokumentaatio/changelog.md)
 
 ## Asennus
 
-1. Asenna riippuvuudet komennolla:
+1. Asenna ensiksi riippuvuudet:
 
 ```bash
 poetry install
 ```
 
-2. Suorita vaadittavat alustustoimenpiteet komennolla:
+2. Suorita seuraavaksi alustukset:
 
 ```bash
 poetry run invoke build
 ```
 
-3. Käynnistä sovellus komennolla:
+3. Lopulta voit käynnistää sovelluksen:
 
 ```bash
 poetry run invoke start
@@ -44,7 +44,7 @@ poetry run invoke start
 
 ### Ohjelman suorittaminen
 
-Ohjelman pystyy suorittamaan komennolla:
+Ohjelma käynnistyy komennolla:
 
 ```bash
 poetry run invoke start
@@ -52,7 +52,7 @@ poetry run invoke start
 
 ### Testaus
 
-Testit suoritetaan komennolla:
+Testit saat kommennolla:
 
 ```bash
 poetry run invoke test
@@ -60,10 +60,10 @@ poetry run invoke test
 
 ### Testikattavuus
 
-Testikattavuusraportin voi generoida komennolla:
+Testikattavuusraportin saa komennolla:
 
 ```bash
 poetry run invoke coverage-report
 ```
 
-Raportti generoituu _htmlcov_-hakemistoon.
+Raportti generoidaan kansioon _htmlcov_.
