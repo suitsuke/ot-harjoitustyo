@@ -10,6 +10,7 @@ class UI:
     def __init__(self, root):
         self._root = root
         self._current_view = None
+        self._user = None
 
     def start(self):
         self._show_login_view()
@@ -19,6 +20,9 @@ class UI:
             self._current_view.destroy()
 
         self._current_view = None
+
+    def _change_user(self, user):
+        self._user = user
 
     def _handle_menu(self):
         self._show_menu_view()
@@ -36,7 +40,8 @@ class UI:
         self._hide_current_view()
         self._current_view = LoginView(
             self._root,
-            self._handle_menu
+            self._handle_menu,
+            self._change_user
         )
         self._current_view.pack()
 
@@ -47,7 +52,8 @@ class UI:
             self._root,
             self._handle_login,
             self._handle_collection,
-            self._handle_settings
+            self._handle_settings,
+            self._user
         )
 
         self._current_view.pack()
@@ -68,10 +74,3 @@ class UI:
         )
         self._current_view.pack()
 
-#window = Tk()
-# window.title("StickerS")
-
-#ui = UI(window)
-# ui.start()
-
-# window.mainloop()

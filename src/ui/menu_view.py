@@ -1,13 +1,14 @@
 from tkinter import ttk, constants
-
+#from src.services.stickerservice import StickerService
 
 class MenuView:
-    def __init__(self, root, handle_login, handle_collection, handle_settings):
+    def __init__(self, root, handle_login, handle_collection, handle_settings, user):
         self._root = root
         self._handle_login = handle_login
         self._handle_collection = handle_collection
         self._handle_settings = handle_settings
         self._frame = None
+        self.user = user
 
         self._initialize()
 
@@ -28,7 +29,7 @@ class MenuView:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        label = ttk.Label(master=self._frame, text="this is the main menu")
+        label = ttk.Label(master=self._frame, text=f"this is the main menu for user {self.user}")
 
         button1 = ttk.Button(
             master=self._frame,

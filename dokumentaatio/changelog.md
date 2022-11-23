@@ -12,6 +12,7 @@
 - Pylint otettu käyttöön
 - Todo: haarautumakattavuus >20% (coverage) 
 - Todo: pylint
-- Todo: dokumentaatio: pakkausrakenne + rakenneluokka
+- dokumentaatio: pakkausrakenne + rakenneluokka
 - Todo: lisää toiminnallisuutta
 - Todo: koeajo cubblilla
+- Todo: käyttöliittymä pitää huolta millä käyttäjällä ollaan ja osaa kutsua services-oliota sillä tiedolla

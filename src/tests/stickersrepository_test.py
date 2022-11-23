@@ -1,7 +1,7 @@
 import unittest
 import sqlite3
 import os
-from repositories.stickers_repository import StickersRepository
+from src.repositories.stickers_repository import StickersRepository
 
 
 class TestStickersRepository(unittest.TestCase):

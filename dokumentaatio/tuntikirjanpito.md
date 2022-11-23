@@ -8,11 +8,11 @@
 | 17.11. | 0.5  | testauksen korjaaminen toimivaksi|
 | 21.11. | 3    | tappelua yhteensopivuuden kanssa (invoke, poetry, python-versiot, tkinterin + gitin siivous |
 | 22.11. | 1.5  | ohjelman asennus + testaus + toimivuus koulun koneilla|
-| 23.11. | -  | pylint|
+| 23.11. | 3.5  | pylint, dokumentaatio (pakkaus-/rakennekaaviot), käyttäjätiedon siirtyminen menu-valikkoon|
 | .11. | -  | x|
 | .11. | -  | x|
 | .11. | -  | x|
 | .11. | -  | x|
 | .11. | -  | x|
 | .11. | -  | x|
-| Summa | 9.5  | tuntia|
+| Summa | 13  | tuntia|

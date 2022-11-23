@@ -4,7 +4,7 @@ import os
 
 class StickersRepository:
     # controls UserStickers, i.e. who has which stickers
-    # (stickers.db should not be modified at any poin by the app)
+    # (stickers.db should not be modified at any point by the app)
 
     def __init__(self, database):
         self.db = database
@@ -34,5 +34,5 @@ class StickersRepository:
     def check_ownership(self, username, sticker):
         # checks if a user has a sticker or not
         # returns True if user has sticker, returns False if they don't
-
+        
         pass
