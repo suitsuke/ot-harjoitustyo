@@ -2,7 +2,7 @@
 
 ## Rakenne
 
-![rakenne](arkkitehtuuri.png)
+![rakenne](arkkitehtuuri2.png)
 
 Ohjelmassa ui hoitaa käyttöliittymän ja kutsuu sitten servicen kautta ohjelman toimintoja. Mikäli hoidetaan pysyväistallennusta, kutsuu services repositories toimintoja, muuten se voi itse kutsua datasta tietoa.
 
