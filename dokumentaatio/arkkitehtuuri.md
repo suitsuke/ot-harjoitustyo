@@ -1,5 +1,10 @@
+# Arkkitehtuuri
+
+Rakenne
+
 ```mermaid
 graph TD;
-    ui ---> services;
+    ui --> services;
     services --> repositories;
     repositories --> data;
+```
