@@ -11,3 +11,6 @@ __pycache__
 
 #data files
 data/userstickers.db
+
+#memo files
+**/database_info.txt

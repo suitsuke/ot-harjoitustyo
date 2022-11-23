@@ -1,5 +1,6 @@
 from tkinter import ttk, constants
 
+
 class SettingsView:
     def __init__(self, root, handle_menu):
         self._root = root
@@ -13,7 +14,7 @@ class SettingsView:
 
     def destroy(self):
         self._frame.destroy()
-    
+
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         label = ttk.Label(master=self._frame, text="this is the settings")

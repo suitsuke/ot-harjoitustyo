@@ -1,5 +1,6 @@
 from tkinter import ttk, constants
 
+
 class MenuView:
     def __init__(self, root, handle_login, handle_collection, handle_settings):
         self._root = root
@@ -9,7 +10,7 @@ class MenuView:
         self._frame = None
 
         self._initialize()
-    
+
     def _handle_button_click(self, n):
         button_value = n
         if button_value == 1:
@@ -24,7 +25,6 @@ class MenuView:
 
     def destroy(self):
         self._frame.destroy()
-    
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
@@ -50,23 +50,23 @@ class MenuView:
         button_a1 = ttk.Button(
             master=self._frame,
             text="Action1",
-            command = lambda: self._handle_button_click(1)
+            command=lambda: self._handle_button_click(1)
         )
         button_a2 = ttk.Button(
             master=self._frame,
             text="Action2",
-            command = lambda: self._handle_button_click(2)
+            command=lambda: self._handle_button_click(2)
         )
         button_a3 = ttk.Button(
             master=self._frame,
             text="Action3",
-            command = lambda: self._handle_button_click(3)
+            command=lambda: self._handle_button_click(3)
         )
 
         label.grid(row=0, column=0)
-        button1.grid(row=3, column=1) #login
-        button2.grid(row=2, column=0) #collection
-        button3.grid(row=2, column=1) #settings
+        button1.grid(row=3, column=1)  # login
+        button2.grid(row=2, column=0)  # collection
+        button3.grid(row=2, column=1)  # settings
 
         button_a1.grid(row=1, column=0)
         button_a2.grid(row=1, column=1)

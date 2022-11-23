@@ -9,4 +9,9 @@
 - Testattu toimivuus laitoksen koneella (virtuaalityöasema Cubbli Linux)
 
 ## Viikko 4
-- 
+- Pylint otettu käyttöön
+- Todo: haarautumakattavuus >20% (coverage) 
+- Todo: pylint
+- Todo: dokumentaatio: pakkausrakenne + rakenneluokka
+- Todo: lisää toiminnallisuutta
+- Todo: koeajo cubblilla
