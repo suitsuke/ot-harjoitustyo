@@ -2,13 +2,8 @@
 
 ## Rakenne
 
-```mermaid
-graph TD;
-    ui --> services;
-    services --> repositories;
-    repositories --> data;
-    services --> data
-```
+![rakenne](arkkitehtuuri.png)
+
 Ohjelmassa ui hoitaa käyttöliittymän ja kutsuu sitten servicen kautta ohjelman toimintoja. Mikäli hoidetaan pysyväistallennusta, kutsuu services repositories toimintoja, muuten se voi itse kutsua datasta tietoa.
 
 ## Käyttöliittymä
@@ -16,6 +11,7 @@ Ohjelmassa ui hoitaa käyttöliittymän ja kutsuu sitten servicen kautta ohjelma
 
 ## Sovelluslogiikka
 
+(TODO)
 ```mermaid
 graph TD;
     ui --> services;
