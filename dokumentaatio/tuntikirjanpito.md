@@ -9,10 +9,10 @@
 | 21.11. | 3    | tappelua yhteensopivuuden kanssa (invoke, poetry, python-versiot, tkinterin + gitin siivous |
 | 22.11. | 1.5  | ohjelman asennus + testaus + toimivuus koulun koneilla|
 | 23.11. | 3.5  | pylint, dokumentaatio (pakkaus-/rakennekaaviot), käyttäjätiedon siirtyminen menu-valikkoon|
+| 24.11. | 1.5  | valitun käyttäjän tiedon siirtyminen, repo+services suunnittelu|
 | .11. | -  | x|
 | .11. | -  | x|
 | .11. | -  | x|
 | .11. | -  | x|
 | .11. | -  | x|
-| .11. | -  | x|
-| Summa | 13  | tuntia|
+| Summa | 14.5  | tuntia|
