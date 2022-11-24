@@ -6,12 +6,22 @@ class StickerService:
     def __init__(self, user):
         #self.sticker_repo = stickers_repository
         #self.user_repo = user_repository
+        default_stickerdb = "data/stickers.db"
+        default_userdb = "data/userstickers.db"
+
         self.user = user
-        self.db_stickers = sqlite3.connect("data/stickers.db")
-        self.db_userstickers = sqlite3.connect("data/userstickers.db")
+        self.db_stickers = sqlite3.connect(default_stickerdb)
+        self.db_userstickers = sqlite3.connect(default_userdb)
+        self.repository = StickersRepository(self.db_userstickers)
+
+    def total_stickers(self):
+        total_stickers = self.db_stickers.execute("SELECT COUNT(*) FROM Stickers").fetchone()
+        total_stickers = total_stickers[0]
+        return total_stickers
     
     def add_sticker(self, user):
         print("pushed 1, user nr:", self.user)
+        self.repository
         # pyytää stickers_repository lisäämään random tarran tietylle käyttäjälle
     
     def all_user_stickers(self, user):
