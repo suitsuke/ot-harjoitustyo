@@ -2,8 +2,8 @@
 import unittest
 import sqlite3
 import os
-from repositories.stickers_repository import StickersRepository
-from services.stickerservice import StickerService
+from src.repositories.stickers_repository import StickersRepository
+from src.services.stickerservice import StickerService
 
 default_stickerdb = "data/stickers.db"
 default_userdb = "tests/userstickers.db"
