@@ -10,15 +10,15 @@ class StickerService:
         default_stickerdb = "data/stickers.db"
         default_userdb = "data/userstickers.db"
 
-        self.db_stickers = sqlite3.connect(default_stickerdb)
+        self.db_stickers = sqlite3.connect("data/stickers.db")
         self.db_userstickers = sqlite3.connect(default_userdb)
         self.repository = StickersRepository(self.db_userstickers)
 
     def total_stickers(self):
-        total_stickers = self.db_stickers.execute(
+        all_stickers = self.db_stickers.execute(
             "SELECT COUNT(*) FROM Stickers").fetchone()
-        total_stickers = total_stickers[0]
-        return total_stickers
+        all_stickers = all_stickers[0]
+        return all_stickers
 
     def add_sticker(self, user):
         print("pushed 1, user nr:", user)

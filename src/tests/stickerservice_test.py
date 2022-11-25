@@ -21,8 +21,7 @@ class TestStickersRepository(unittest.TestCase):
             "INSERT INTO UserStickers (user_id, sticker_id) VALUES (0, 0)")
         self.testdb = testdb
         self.repo = StickersRepository(self.testdb)
-
-        self.service = StickerService
+        self.service = StickerService()
 
     def test_count_all_stickers(self):
         self.assertEqual(self.service.total_stickers(), 11)
