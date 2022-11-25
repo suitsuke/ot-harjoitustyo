@@ -22,7 +22,6 @@ class UI:
         self._current_view = None
 
     def _change_user(self, user):
-        print(user)
         self._user = user
 
     def _handle_menu(self):

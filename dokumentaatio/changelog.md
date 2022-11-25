@@ -10,12 +10,12 @@
 
 ## Viikko 4
 - Pylint otettu käyttöön
-- Todo: haarautumakattavuus >20% (coverage) 
-- Todo: pylint
 - dokumentaatio: pakkausrakenne + rakenneluokka
-- Todo: lisää toiminnallisuutta
-- Todo: koeajo cubblilla
-- Todo: käyttöliittymä pitää huolta millä käyttäjällä ollaan ja osaa kutsua services-oliota sillä tiedolla
+- käyttöliittymä pitää huolta millä käyttäjällä ollaan ja osaa kutsua services-oliota sillä tiedolla
 - todo: stickerservice osaa hakea tiedon mitä kaikkia tarroja löytyy käyttäjältä listassa - collection-ui: osaa näyttää kaikki löytyneet tarrat
 - todo: stickerservice osaa pyytää userstickers-repo laittamaan tarran jollekkin käyttäjälle
 - aloitettu stickerserviceä, nyt testaaminen ei toimi millään (ModuleNotFoundError: can't find repositories)
+- Todo: lisää toiminnallisuutta
+- Todo: koeajo cubblilla
+- Todo: haarautumakattavuus >20% (coverage) 
+- Todo: pylint

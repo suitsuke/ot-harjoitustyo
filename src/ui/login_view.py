@@ -21,9 +21,6 @@ class LoginView:
     def destroy(self):
         self._frame.destroy()
 
-    def button_pressed(self, user):
-        # self._change_user(user)
-        self._handle_menu
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)

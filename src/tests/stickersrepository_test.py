@@ -1,8 +1,8 @@
 import unittest
 import sqlite3
 import os
-#from repositories.stickers_repository import StickersRepository
-#from src.services.stickerservice import StickerService
+from repositories.stickers_repository import StickersRepository
+from services.stickerservice import StickerService
 
 
 class TestStickersRepository(unittest.TestCase):

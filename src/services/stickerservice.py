@@ -4,13 +4,12 @@ import os
 
 
 class StickerService:
-    def __init__(self, user):
+    def __init__(self):
         #self.sticker_repo = stickers_repository
         #self.user_repo = user_repository
         default_stickerdb = "data/stickers.db"
         default_userdb = "data/userstickers.db"
 
-        self.user = user
         self.db_stickers = sqlite3.connect(default_stickerdb)
         self.db_userstickers = sqlite3.connect(default_userdb)
         self.repository = StickersRepository(self.db_userstickers)
@@ -22,8 +21,8 @@ class StickerService:
         return total_stickers
 
     def add_sticker(self, user):
-        print("pushed 1, user nr:", self.user)
-        self.repository
+        print("pushed 1, user nr:", user)
+        #self.repository
         # pyytää stickers_repository lisäämään random tarran tietylle käyttäjälle
 
     def all_user_stickers(self, user):

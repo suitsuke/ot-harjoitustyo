@@ -1,5 +1,5 @@
 from tkinter import ttk, constants
-#from src.services.stickerservice import StickerService
+from services.stickerservice import StickerService
 
 
 class MenuView:
@@ -16,6 +16,7 @@ class MenuView:
     def _handle_button_click(self, n):
         button_value = n
         if button_value == 1:
+            #add sticker 
             print("pushed 1")
         elif button_value == 2:
             print("pushed 2")
