@@ -34,5 +34,5 @@ class StickersRepository:
     def check_ownership(self, username, sticker):
         # checks if a user has a sticker or not
         # returns True if user has sticker, returns False if they don't
-        
+
         pass

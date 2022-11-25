@@ -12,6 +12,7 @@ class LoginView:
 
     def change_user(self, user):
         self._change_user(user)
+        self._handle_menu()
         print("user changed")
 
     def pack(self):
@@ -21,29 +22,27 @@ class LoginView:
         self._frame.destroy()
 
     def button_pressed(self, user):
-        #self._change_user(user)
+        # self._change_user(user)
         self._handle_menu
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         label = ttk.Label(master=self._frame, text="This is the login screen")
 
-
-
         user1_button = ttk.Button(
             master=self._frame,
             text="User 1",
-            command=self.button_pressed(1) 
-        )#self._handle_menu works
+            command=lambda: self.change_user(1)
+        ) 
         user2_button = ttk.Button(
             master=self._frame,
             text="User 2",
-            command=self._handle_menu
+            command=lambda: self.change_user(2)
         )
         user3_button = ttk.Button(
             master=self._frame,
             text="User 3",
-            command=self._handle_menu
+            command=lambda: self.change_user(3)
         )
 
         label.grid(row=0, column=0)

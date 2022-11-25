@@ -2,15 +2,16 @@
 import unittest
 import sqlite3
 import os
-from src.repositories.stickers_repository import StickersRepository
-from src.services.stickerservice import StickerService
+from repositories.stickers_repository import StickersRepository
+from services.stickerservice import StickerService
 
 default_stickerdb = "data/stickers.db"
 default_userdb = "tests/userstickers.db"
 
+
 class TestStickersRepository(unittest.TestCase):
     def setUp(self):
-        #set up userstickers
+        # set up userstickers
         os.remove("src/tests/userstickers.db")
         testdb = sqlite3.connect("src/tests/userstickers.db")
         testdb.isolation_level = None
@@ -24,4 +25,4 @@ class TestStickersRepository(unittest.TestCase):
         self.service = StickerService
 
     def test_count_all_stickers(self):
-        self.assertEqual(self.service.total_stickers(),11)
+        self.assertEqual(self.service.total_stickers(), 11)

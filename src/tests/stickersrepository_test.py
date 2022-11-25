@@ -1,7 +1,7 @@
 import unittest
 import sqlite3
 import os
-from src.repositories.stickers_repository import StickersRepository
+#from repositories.stickers_repository import StickersRepository
 #from src.services.stickerservice import StickerService
 
 
@@ -35,5 +35,3 @@ class TestStickersRepository(unittest.TestCase):
         self.assertEqual(self.repo.remove_sticker(2, 3), True)
         # returns false if nothing was removed
         self.assertEqual(self.repo.remove_sticker(2, 5), False)
-    
-
