@@ -24,6 +24,7 @@ class TestStickersRepository(unittest.TestCase):
     def test_add_sticker(self):
         self.assertEqual(self.repo.add_sticker(2, 3), (2, 3))
         self.assertEqual(self.repo.add_sticker(1, 1), (1, 1))
+        self.assertEqual(self.repo.add_sticker(3, 5), (3, 5))
 
     def test_remove_sticker(self):
         self.repo.add_sticker(1, 1)

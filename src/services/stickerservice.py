@@ -10,9 +10,10 @@ class StickerService:
         #self.user_repo = user_repository
         default_stickerdb = "data/stickers.db"
         default_userdb = "data/userstickers.db"
+        test_userdb = "src/tests/userstickers.db"
 
-        self.db_stickers = sqlite3.connect("data/stickers.db")
-        self.db_userstickers = sqlite3.connect("data/userstickers.db")
+        self.db_stickers = sqlite3.connect(default_stickerdb)
+        self.db_userstickers = sqlite3.connect(test_userdb)
         self.repository = StickersRepository(self.db_userstickers)
 
     def total_stickers(self):
@@ -24,14 +25,20 @@ class StickerService:
     def add_sticker(self, user):
         # pyytää stickers_repository lisäämään random tarran tietylle käyttäjälle
         # lisätään vain uusia tarroja joita ei omista
+        # jos kaikki tarrat omistetaan, palauttaa -1
         total = self.total_stickers()
         random_sticker = random.randint(1,total)
         #list of owned stickers by number:
-        owned_stickers = self.total_stickers_by_user(user) 
+        owned_stickers = self.total_stickers_by_user(user)
+        if len(owned_stickers) >= total:
+            return(-1)
         #randomize until you find one that is now owned
-        while random_sticker in owned_stickers:
+        while int(random_sticker) in owned_stickers:
             random_sticker = random_sticker = random.randint(1,total)
-        self.repository.add_sticker(random_sticker, user)
+
+        insertion = self.repository.add_sticker(user, random_sticker)
+        
+        return insertion
         
 
     def total_stickers_by_user(self, user):

@@ -23,7 +23,7 @@ class StickersRepository:
         self.db.execute("INSERT INTO UserStickers (user_id, sticker_id) VALUES (?, ?)", [
                         user_id, sticker_id])
 
-        # returns what was just put in, in a
+        # returns what was just put in, in a tuple
         id = self.db.execute("SELECT user_id, sticker_id from UserStickers WHERE user_id=? AND sticker_id=?", [
                              user_id, sticker_id]).fetchone()
         return id
