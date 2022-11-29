@@ -1,5 +1,5 @@
-from tkinter import ttk, constants
-
+from tkinter import ttk, constants, PhotoImage
+from PIL import ImageTk, Image
 
 class CollectionView:
     def __init__(self, root, handle_menu):
@@ -17,6 +17,7 @@ class CollectionView:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
+        #text and buttons
         label = ttk.Label(master=self._frame, text="this is the collection")
 
         button = ttk.Button(
@@ -27,3 +28,9 @@ class CollectionView:
 
         label.grid(row=0, column=0)
         button.grid(row=1, column=0)
+
+        #images
+        img = PhotoImage(file="data/images/1.gif")
+        image1button = ttk.Button(master=self._frame, image=img, command=lambda:print("image"))
+        image1button.grid(row=2, column=0)
+        
