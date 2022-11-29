@@ -21,7 +21,6 @@ class LoginView:
     def destroy(self):
         self._frame.destroy()
 
-
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         label = ttk.Label(master=self._frame, text="This is the login screen")

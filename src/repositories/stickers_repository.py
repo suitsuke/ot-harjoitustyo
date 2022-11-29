@@ -9,12 +9,14 @@ class StickersRepository:
     def __init__(self, database):
         self.db = database
 
-    def find_by_user(self, username):
+    def find_all_by_user(self, user):
         # finds a list of stickers aqcuired by user and returns their id:s in a list
-        list = []
-
-        # todo
-        return list
+        sticker_list = self.db.execute("SELECT sticker_id from UserStickers WHERE user_id=?", [user]).fetchall()
+        for i in range(len(sticker_list)):
+            sticker_list[i] = int(sticker_list[i][0])
+        
+        sorted_list = sorted(sticker_list)
+        return sorted_list
 
     def add_sticker(self, user_id, sticker_id):
         # adds sticker ownership to a user if they don't already have it

@@ -10,13 +10,15 @@ class MenuView:
         self._handle_settings = handle_settings
         self._frame = None
         self.user = user
+        self.service = StickerService
 
         self._initialize()
 
     def _handle_button_click(self, n):
         button_value = n
         if button_value == 1:
-            #add sticker 
+            #add sticker
+            self.service
             print("pushed 1")
         elif button_value == 2:
             print("pushed 2")

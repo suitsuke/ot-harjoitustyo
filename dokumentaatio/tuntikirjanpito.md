@@ -10,9 +10,9 @@
 | 22.11. | 1.5  | ohjelman asennus + testaus + toimivuus koulun koneilla|
 | 23.11. | 3.5  | pylint, dokumentaatio (pakkaus-/rakennekaaviot), käyttäjätiedon siirtyminen menu-valikkoon|
 | 24.11. | 2  | valitun käyttäjän tiedon siirtyminen, repo+services suunnittelu + testaus|
+| 25.11. | 1.5  | ohjauksessa apua testausongelmaan + menu-käyttäjätiedon siirtyminen, repo+services toimintojen lisääminen|
 | .11. | -  | x|
 | .11. | -  | x|
 | .11. | -  | x|
 | .11. | -  | x|
-| .11. | -  | x|
-| Summa | 15  | tuntia|
+| Summa | 16.5  | tuntia|
