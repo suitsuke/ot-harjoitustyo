@@ -19,6 +19,7 @@
 - Todo: koeajo cubblilla
 - Todo: haarautumakattavuus >20% (coverage) 
 - Todo: pylint
+- aloitettu collection-ui kuvien näyttämistä
 
 ## Viikko 5
 - todo: collection-ui: osaa näyttää kaikki löytyneet tarrat

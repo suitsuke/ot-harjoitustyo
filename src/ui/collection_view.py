@@ -1,5 +1,4 @@
 from tkinter import ttk, constants, PhotoImage
-from PIL import ImageTk, Image
 
 class CollectionView:
     def __init__(self, root, handle_menu):

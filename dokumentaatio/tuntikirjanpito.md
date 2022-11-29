@@ -11,8 +11,8 @@
 | 23.11. | 3.5  | pylint, dokumentaatio (pakkaus-/rakennekaaviot), käyttäjätiedon siirtyminen menu-valikkoon|
 | 24.11. | 2  | valitun käyttäjän tiedon siirtyminen, repo+services suunnittelu + testaus|
 | 25.11. | 1.5  | ohjauksessa apua testausongelmaan + menu-käyttäjätiedon siirtyminen, repo+services toimintojen lisääminen|
-| 29.11. | 2  | tarran lisäys servicen kautta + testaus|
+| 29.11. | 3.5  | tarran lisäys servicen kautta + testaus (ei toimi), collection ui aloitettu|
 | .11. | -  | x|
 | .11. | -  | x|
 | .11. | -  | x|
-| Summa | 18.5  | tuntia|
+| Summa | 20  | tuntia|
