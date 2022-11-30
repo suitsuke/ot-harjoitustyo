@@ -36,6 +36,7 @@ class StickerService:
         while int(random_sticker) in owned_stickers:
             random_sticker = random_sticker = random.randint(1,total)
 
+        #random_sticker = 5 testing
         insertion = self.repository.add_sticker(user, random_sticker)
         
         return insertion
