@@ -1,9 +1,9 @@
 from tkinter import Tk
-
 from ui.collection_view import CollectionView
 from ui.login_view import LoginView
 from ui.menu_view import MenuView
 from ui.settings_view import SettingsView
+from services.stickerservice import StickerService
 
 
 class UI:
@@ -11,6 +11,7 @@ class UI:
         self._root = root
         self._current_view = None
         self._user = None
+        self._service = StickerService()
 
     def start(self):
         self._show_login_view()
@@ -47,13 +48,13 @@ class UI:
 
     def _show_menu_view(self):
         self._hide_current_view()
-
         self._current_view = MenuView(
             self._root,
             self._handle_login,
             self._handle_collection,
             self._handle_settings,
-            self._user
+            self._user,
+            self._service
         )
 
         self._current_view.pack()
@@ -62,7 +63,8 @@ class UI:
         self._hide_current_view()
         self._current_view = CollectionView(
             self._root,
-            self._handle_menu
+            self._handle_menu,
+            self._service
         )
         self._current_view.pack()
 

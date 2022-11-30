@@ -3,14 +3,14 @@ from services.stickerservice import StickerService
 
 
 class MenuView:
-    def __init__(self, root, handle_login, handle_collection, handle_settings, user):
+    def __init__(self, root, handle_login, handle_collection, handle_settings, user, service):
         self._root = root
         self._handle_login = handle_login
         self._handle_collection = handle_collection
         self._handle_settings = handle_settings
         self._frame = None
         self.user = user
-        self.service = StickerService()
+        self.service = service
 
         self._initialize()
 

@@ -11,8 +11,7 @@ default_userdb = "tests/userstickers.db"
 
 class TestStickersRepository(unittest.TestCase):
     def setUp(self):
-        # set up userstickers
-        os.remove("src/tests/userstickers.db")
+        # set up userstickers 
         self.testdb = sqlite3.connect("src/tests/userstickers.db")
         self.testdb.isolation_level = None
         self.testdb.execute(
@@ -22,6 +21,9 @@ class TestStickersRepository(unittest.TestCase):
         #self.testdb = testdb
         #self.repo = StickersRepository(self.testdb)
         self.service = StickerService()
+    
+    def tearDown(self):
+        os.remove("src/tests/userstickers.db")
 
     def test_total_stickers(self):
         self.assertEqual(self.service.total_stickers(), 11) #total amount of stickers in db
