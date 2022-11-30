@@ -12,7 +12,7 @@
 | 24.11. | 2  | valitun käyttäjän tiedon siirtyminen, repo+services suunnittelu + testaus|
 | 25.11. | 1.5  | ohjauksessa apua testausongelmaan + menu-käyttäjätiedon siirtyminen, repo+services toimintojen lisääminen|
 | 29.11. | 3.5  | tarran lisäys servicen kautta + testaus (ei toimi), collection ui aloitettu|
+| 30.11. | 1.5  | add-sticker toimii, testaus toimii, collectioniin saatu eka kuva näkymään|
 | .11. | -  | x|
 | .11. | -  | x|
-| .11. | -  | x|
-| Summa | 20  | tuntia|
+| Summa | 21.5  | tuntia|

@@ -16,7 +16,7 @@ class MenuView:
 
     def _handle_button_click(self, button_value):
         if button_value == 1:
-            #add sticker
+            # add sticker
             added_sticker = self.service.add_sticker(self.user)
             print("sticker", added_sticker, "added to user", self.user)
         elif button_value == 2:

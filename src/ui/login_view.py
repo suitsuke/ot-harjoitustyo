@@ -29,7 +29,7 @@ class LoginView:
             master=self._frame,
             text="User 1",
             command=lambda: self.change_user(1)
-        ) 
+        )
         user2_button = ttk.Button(
             master=self._frame,
             text="User 2",

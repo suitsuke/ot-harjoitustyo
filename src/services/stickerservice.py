@@ -1,7 +1,7 @@
-from repositories.stickers_repository import StickersRepository
 import sqlite3
-import os
 import random
+
+from repositories.stickers_repository import StickersRepository
 
 
 class StickerService:
@@ -10,7 +10,7 @@ class StickerService:
         #self.user_repo = user_repository
         default_stickerdb = "data/stickers.db"
         default_userdb = "data/userstickers.db"
-        test_userdb = "src/tests/userstickers.db"
+        test_userdb = "src/tests/userstickers.db"  # for testing
 
         self.db_stickers = sqlite3.connect(default_stickerdb)
         self.db_userstickers = sqlite3.connect(test_userdb)
@@ -27,26 +27,25 @@ class StickerService:
         # lisätään vain uusia tarroja joita ei omista
         # jos kaikki tarrat omistetaan, palauttaa -1
         total = self.total_stickers()
-        random_sticker = random.randint(1,total)
-        #list of owned stickers by number:
+        random_sticker = random.randint(1, total)
+        # list of owned stickers by number:
         owned_stickers = self.total_stickers_by_user(user)
         if len(owned_stickers) >= total:
-            return(-1)
-        #randomize until you find one that is now owned
+            return -1
+        # randomize until you find one that is now owned
         while int(random_sticker) in owned_stickers:
-            random_sticker = random_sticker = random.randint(1,total)
+            random_sticker = random_sticker = random.randint(1, total)
 
-        #random_sticker = 5 testing
+        # random_sticker = 5 testing
         insertion = self.repository.add_sticker(user, random_sticker)
-        
+
         return insertion
-        
 
     def total_stickers_by_user(self, user):
         # pyytää stickers_repo hakemaan listan tietyn käyttäjän kaikista tarroista
-        #lajiteltuna pienestä isompaan
+        # lajiteltuna pienestä isompaan
         sticker_list = self.repository.find_all_by_user(user)
-        
+
         return sticker_list
 
     def all_stickers(self):

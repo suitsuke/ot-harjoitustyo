@@ -12,14 +12,15 @@
 - Pylint otettu käyttöön
 - Dokumentaatio: pakkausrakenne + rakenneluokka
 - Käyttöliittymä pitää huolta millä käyttäjällä ollaan ja osaa kutsua services-oliota sillä tiedolla
-- Stickerservice osaa hakea tiedon mitä kaikkia tarroja löytyy käyttäjältä listassa (toimii mutta jokin bugi tietokannan luomisen kanssa)
-- todo: stickerservice osaa pyytää userstickers-repo laittamaan tarran jollekkin käyttäjälle
-(services osaa pyytää laittaa ja repo toimii testauksessa mutta tietokanta ei muutu services-testauksessa)
-- pitäisikö olla vain yksi service ja yksi repo ja service saa repon argumentiksi, sillä nyt jokaisen käyttäjän service ei voi tehdä uutta repoa joka ei sulje tietokantaa käytön jälkeen?
+- Stickerservice osaa hakea tiedon mitä kaikkia tarroja löytyy käyttäjältä listassa 
+- stickerservice osaa pyytää userstickers-repo laittamaan tarran jollekkin käyttäjälle
+- stickerservice osaa kysyä montako tarraa tietyllä käyttäjällä on
+- koko ohjelmalla on nyt yksi service jolla on yksi repo
 - Todo: koeajo cubblilla
-- Todo: haarautumakattavuus >20% (coverage) 
-- Todo: pylint
+- haarautumakattavuus >20% (coverage) 
+- pylint ajettu
 - aloitettu collection-ui kuvien näyttämistä
+- kuvien näyttämiseen tarvitaan PIL, joka asennettu poetryyn
 
 ## Viikko 5
 - todo: collection-ui: osaa näyttää kaikki löytyneet tarrat
