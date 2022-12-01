@@ -32,11 +32,29 @@ class TestStickersRepository(unittest.TestCase):
     def test_remove_sticker(self):
         self.repo.add_sticker(1, 1)
         self.repo.add_sticker(2, 3)
-        return
+        self.assertEqual(self.repo.find_all_by_user(0), [0])
+        self.assertEqual(self.repo.find_all_by_user(1), [1])
+        self.assertEqual(self.repo.find_all_by_user(2), [3])
+
+        self.repo.remove_sticker(1,1)
+        self.assertEqual(self.repo.find_all_by_user(0), [0])
+        self.assertEqual(self.repo.find_all_by_user(1), [])
+        self.assertEqual(self.repo.find_all_by_user(2), [3])
+
+        self.repo.remove_sticker(1,1) #remove something that isnt in the db
+        self.assertEqual(self.repo.find_all_by_user(0), [0])
+        self.assertEqual(self.repo.find_all_by_user(1), [])
+        self.assertEqual(self.repo.find_all_by_user(2), [3])
+
+        self.repo.remove_sticker(2,3) #remove something that isnt in the db
+        self.assertEqual(self.repo.find_all_by_user(0), [0])
+        self.assertEqual(self.repo.find_all_by_user(1), [])
+        self.assertEqual(self.repo.find_all_by_user(2), [])
+        
         # returns true if sticker was removed
-        self.assertEqual(self.repo.remove_sticker(2, 3), True)
+        #self.assertEqual(self.repo.remove_sticker(2, 3), True)
         # returns false if nothing was removed
-        self.assertEqual(self.repo.remove_sticker(2, 5), False)
+        #self.assertEqual(self.repo.remove_sticker(2, 5), False)
 
     def test_find_all_by_user(self):
         self.repo.add_sticker(2, 3)

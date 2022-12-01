@@ -57,3 +57,18 @@ class TestStickersRepository(unittest.TestCase):
         self.assertEqual(over_added, -1)
         over_added = self.service.add_sticker(3)
         self.assertEqual(over_added, -1)
+    
+    def test_remove_sticker(self):
+        for i in range(1, self.stickers_amount+1):
+            self.service.add_sticker(3)
+            self.assertEqual(len(self.service.total_stickers_by_user(3)), i)
+        self.assertEqual(self.service.total_stickers_by_user(3), [1,2,3,4,5,6,7,8,9,10,11])
+        
+        self.service.remove_sticker(3,1)
+        self.assertEqual(self.service.total_stickers_by_user(3), [2,3,4,5,6,7,8,9,10,11])
+
+        self.service.remove_sticker(3,10)
+        self.assertEqual(self.service.total_stickers_by_user(3), [2,3,4,5,6,7,8,9,11])
+
+        self.service.remove_sticker(3,10)
+        self.assertEqual(self.service.total_stickers_by_user(3), [2,3,4,5,6,7,8,9,11])

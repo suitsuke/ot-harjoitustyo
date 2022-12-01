@@ -28,10 +28,11 @@ class StickersRepository:
                                     user_id, sticker_id]).fetchone()
         return insertion
 
-    def remove_sticker(self, username, sticker):
+    def remove_sticker(self, username: int, sticker: int):
         # removes sticker ownership from a user (if they own it)
         # return true if successful, false if not
-        pass
+        self.db.execute("DELETE FROM UserStickers WHERE user_id=? AND sticker_id=?", [username, sticker])
+        return
 
     def check_ownership(self, username, sticker):
         # checks if a user has a sticker or not

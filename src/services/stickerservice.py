@@ -13,7 +13,7 @@ class StickerService:
         test_userdb = "src/tests/userstickers.db"  # for testing
 
         self.db_stickers = sqlite3.connect(default_stickerdb)
-        self.db_userstickers = sqlite3.connect(default_userdb)
+        self.db_userstickers = sqlite3.connect(test_userdb)
         self.repository = StickersRepository(self.db_userstickers)
 
     def total_stickers(self):
@@ -53,7 +53,8 @@ class StickerService:
         # palauttaa ne jossain muodossa jota ui.collection osaa näyttää
         pass
 
-    def remove_sticker(self):
+    def remove_sticker(self, user, sticker):
         # pyytää stickers_repo poistamaan tarran joltain käyttäjältä
-        # tämä on ehkä ylimääräinen toiminto?
-        pass
+        # tämä on ehkä ylimääräinen toiminto, tarpeen jatkokehityksen tarranvaihdossa
+        self.repository.remove_sticker(user, sticker)
+        return
