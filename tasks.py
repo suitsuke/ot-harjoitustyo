@@ -1,5 +1,6 @@
 import inspect
 
+#for python 3.11:
 if not hasattr(inspect, 'getargspec'):
     inspect.getargspec = inspect.getfullargspec
 

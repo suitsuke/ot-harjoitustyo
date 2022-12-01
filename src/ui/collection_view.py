@@ -19,11 +19,11 @@ class CollectionView:
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         #text and buttons
-        label = ttk.Label(master=self._frame, text="this is the collection")
+        label = ttk.Label(master=self._frame, text="Collection")
 
         button = ttk.Button(
             master=self._frame,
-            text="Menu",
+            text="Back to menu",
             command=self._handle_menu
         )
 
@@ -31,16 +31,9 @@ class CollectionView:
         button.grid(row=1, column=0)
 
         # images
-        #img = PhotoImage(file="data/images/1.gif")
-        #image1button = ttk.Button(master=self._frame, image=img, command=lambda:print("image"))
-        #image1button.grid(row=2, column=0)
-        image = Image.open("data/images/1.gif")
-        photo = ImageTk.PhotoImage(image)
-        label = ttk.Label(self._frame, image=photo)
-        label.image = photo
-        label.grid(row=3, column=3)
-        #ttk.Label(self._frame,image=img).grid(row=3, column=3)
-
-        # pil-images
-        # img=ImageTk.PhotoImage(file="data/images/1.gif")
-        #img.grid(row=3, column=3)
+        image1 = Image.open("data/images/1.png")
+        photo = ImageTk.PhotoImage(image1)
+        label2 = ttk.Label(self._frame, image=photo)
+        label2.image = photo
+        label2.grid(row=3, column=3)
+        
