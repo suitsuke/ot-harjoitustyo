@@ -25,7 +25,7 @@
 - repo + services osaa poistaa tarroja + automatisoitu testaus
 - servicellä on metodit lisätä tietty tarra ja lisätä random-tarra
 - todo: menun napit lisäävät tarran oikealle käyttäjälle (toiminee mutta tietokanta ei tallennu niin evt)
-
+- collection-ui tietää minkä käyttäjän collectionia näytetään
 - todo: collection-ui: osaa näyttää kaikki löytyneet tarrat tietyltä käyttäjältä
 - todo: random-testaaminen?
 

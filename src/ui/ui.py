@@ -64,7 +64,8 @@ class UI:
         self._current_view = CollectionView(
             self._root,
             self._handle_menu,
-            self._service
+            self._service,
+            self._user
         )
         self._current_view.pack()
 

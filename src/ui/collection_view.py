@@ -3,11 +3,12 @@ from PIL import Image, ImageTk
 
 
 class CollectionView:
-    def __init__(self, root, handle_menu, service):
+    def __init__(self, root, handle_menu, service, user):
         self._root = root
         self._handle_menu = handle_menu
         self._frame = None
         self._service = service
+        self._user = user
         self._initialize()
 
     def pack(self):
@@ -19,7 +20,7 @@ class CollectionView:
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         #text and buttons
-        label = ttk.Label(master=self._frame, text="Collection")
+        label = ttk.Label(master=self._frame, text=f"Collection for user {self._user}")
 
         button = ttk.Button(
             master=self._frame,
