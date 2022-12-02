@@ -13,7 +13,7 @@ class StickerService:
         test_userdb = "src/tests/userstickers.db"  # for testing
 
         self.db_stickers = sqlite3.connect(default_stickerdb)
-        self.db_userstickers = sqlite3.connect(default_userdb)
+        self.db_userstickers = sqlite3.connect(test_userdb)
         self.repository = StickersRepository(self.db_userstickers)
 
     def total_stickers(self):

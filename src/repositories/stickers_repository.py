@@ -22,7 +22,7 @@ class StickersRepository:
         # adds sticker ownership to a user if they don't already have it
         self.db.execute("INSERT INTO UserStickers (user_id, sticker_id) VALUES (?, ?)", [
                         user_id, sticker_id])
-
+        self.db.commit()
         # returns what was just put in, in a tuple
         insertion = self.db.execute("SELECT user_id, sticker_id from UserStickers WHERE user_id=? AND sticker_id=?", [
                                     user_id, sticker_id]).fetchone()
@@ -32,6 +32,7 @@ class StickersRepository:
         # removes sticker ownership from a user (if they own it)
         # return true if successful, false if not
         self.db.execute("DELETE FROM UserStickers WHERE user_id=? AND sticker_id=?", [username, sticker])
+        self.db.commit()
         return
 
     def check_ownership(self, username, sticker):

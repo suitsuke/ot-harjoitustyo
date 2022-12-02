@@ -26,11 +26,11 @@
 - servicellä on metodit lisätä tietty tarra ja lisätä random-tarra
 - todo: menun napit lisäävät tarran oikealle käyttäjälle (toiminee mutta tietokanta ei tallennu niin evt)
 - collection-ui tietää minkä käyttäjän collectionia näytetään
-- todo: collection-ui: osaa näyttää kaikki löytyneet tarrat tietyltä käyttäjältä
-- todo: random-testaaminen?
+- collection-ui osaa näyttää kaikki löytyneet tarrat tietyltä käyttäjältä
+- data/userstickers.db tallentaa tiedot kun ohjelma suljetaan
 
-- todo: data/userstickers.db tallentaa tiedot kun ohjelma suljetaan
-- todo: data-kansion sijainti (nyt sekä rootissa että src:n alla)
+- todo: random-testaaminen?
+- todo: userstickersin testaaminen niin että ei tarvitse muokata koodia
 
 - todo: github release
 - todo: readmehen linkki releaseen
