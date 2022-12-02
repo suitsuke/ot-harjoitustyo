@@ -22,12 +22,15 @@
 - kuvien näyttämiseen tarvitaan PIL(low), joka asennettu poetryyn
 
 ## Viikko 5
+- repo + services osaa poistaa tarroja + automatisoitu testaus
+- servicellä on metodit lisätä tietty tarra ja lisätä random-tarra
+- todo: menun napit lisäävät tarran oikealle käyttäjälle (toiminee mutta tietokanta ei tallennu niin evt)
+
 - todo: collection-ui: osaa näyttää kaikki löytyneet tarrat tietyltä käyttäjältä
-- todo: repo + services osaa poistaa tarroja
-- todo: näiden automatisoitu testaus
-- todo: menun napit lisäävät tarran oikealle käyttäjälle
 - todo: random-testaaminen?
-- todo: data/userstickers.db tyhjenee kun ohjelma suljetaan
+
+- todo: data/userstickers.db tallentaa tiedot kun ohjelma suljetaan
+- todo: data-kansion sijainti (nyt sekä rootissa että src:n alla)
 
 - todo: github release
 - todo: readmehen linkki releaseen

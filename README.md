@@ -51,6 +51,7 @@ Testit saat kommennolla:
 ```bash
 poetry run invoke test
 ```
+Huom! 1.12: testien ajoon käytettävä userstickers.db-tiedostoa testikansiossa
 
 ### Testikattavuus
 

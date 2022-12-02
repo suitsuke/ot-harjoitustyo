@@ -22,7 +22,7 @@ class StickerService:
         all_stickers = all_stickers[0]
         return all_stickers
 
-    def add_sticker(self, user):
+    def add_random_sticker(self, user):
         # pyytää stickers_repository lisäämään random tarran tietylle käyttäjälle
         # lisätään vain uusia tarroja joita ei omista
         # jos kaikki tarrat omistetaan, palauttaa -1
@@ -38,6 +38,22 @@ class StickerService:
 
         # random_sticker = 5 testing
         insertion = self.repository.add_sticker(user, random_sticker)
+
+        return insertion
+    
+    def add_specific_sticker(self, user, sticker):
+        # pyytää stickers_repository lisäämään tietyn tarran tietylle käyttäjälle
+        # lisätään vain uusia tarroja joita ei omista
+        # jos tarra jo omistetaan: palauttaa -1
+        total = self.total_stickers()
+        # list of owned stickers by number:
+        owned_stickers = self.total_stickers_by_user(user)
+        #if len(owned_stickers) >= total:
+        #    return -1
+        if sticker in owned_stickers:
+            return -1
+
+        insertion = self.repository.add_sticker(user, sticker)
 
         return insertion
 
