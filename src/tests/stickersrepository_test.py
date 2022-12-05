@@ -7,7 +7,11 @@ from services.stickerservice import StickerService
 
 class TestStickersRepository(unittest.TestCase):
     def setUp(self):
-        testdb = sqlite3.connect("src/tests/userstickers.db")
+        try:
+           os.remove("data/userstickers.db") 
+        except:
+            pass
+        testdb = sqlite3.connect("data/userstickers.db")
         testdb.isolation_level = None
         testdb.execute(
             "CREATE TABLE UserStickers (user_id INTEGER REFERENCES Users, sticker_id INTEGER REFERENCES Stickers)")
@@ -18,7 +22,8 @@ class TestStickersRepository(unittest.TestCase):
         self.repo = StickersRepository(self.testdb)
 
     def tearDown(self):
-        os.remove("src/tests/userstickers.db")
+        return
+        os.remove("data/userstickers.db")
 
     def test_testinit(self):
         zero = self.testdb.execute("SELECT * FROM UserStickers").fetchone()

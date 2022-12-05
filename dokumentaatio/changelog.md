@@ -28,9 +28,10 @@
 - collection-ui tietää minkä käyttäjän collectionia näytetään
 - collection-ui osaa näyttää kaikki löytyneet tarrat tietyltä käyttäjältä
 - data/userstickers.db tallentaa tiedot kun ohjelma suljetaan
+- testaus toimii nyt ilman koodin muokkaamista välissä suoraan invoke-komennolla
 
 - todo: random-testaaminen?
-- todo: userstickersin testaaminen niin että ei tarvitse muokata koodia
+
 
 - todo: github release
 - todo: readmehen linkki releaseen

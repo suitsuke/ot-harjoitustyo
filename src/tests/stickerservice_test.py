@@ -12,7 +12,11 @@ default_userdb = "tests/userstickers.db"
 class TestStickersRepository(unittest.TestCase):
     def setUp(self):
         # set up userstickers
-        self.testdb = sqlite3.connect("src/tests/userstickers.db")
+        try:
+            os.remove("data/userstickers.db")
+        except:
+            pass
+        self.testdb = sqlite3.connect("data/userstickers.db")
         self.testdb.isolation_level = None
         self.testdb.execute(
             "CREATE TABLE UserStickers (user_id INTEGER REFERENCES Users, sticker_id INTEGER REFERENCES Stickers)")
@@ -24,7 +28,17 @@ class TestStickersRepository(unittest.TestCase):
         self.stickers_amount = 12
 
     def tearDown(self):
-        os.remove("src/tests/userstickers.db")
+        try:
+            self.testdb = sqlite3.connect("data/userstickers.db")
+            self.testdb.isolation_level = None
+            self.testdb.execute(
+                "CREATE TABLE UserStickers (user_id INTEGER REFERENCES Users, sticker_id INTEGER REFERENCES Stickers)")
+            self.testdb.execute(
+                "INSERT INTO UserStickers (user_id, sticker_id) VALUES (0, 0)")
+        except:
+            pass
+        return
+        #os.remove("data/userstickers.db")
 
     def test_total_stickers(self):
         # total amount of stickers in db
