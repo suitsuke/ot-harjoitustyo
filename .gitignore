@@ -9,8 +9,6 @@ __pycache__
 *.py[cod]
 *$py.class
 
-#data files
-data/userstickers.db
 
 #memo files
 **/database_info.txt
