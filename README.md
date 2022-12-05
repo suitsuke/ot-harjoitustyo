@@ -6,6 +6,8 @@ Sovelluksen avulla käyttäjä voi kerätä tarroja suoritetuista arkiaskareista
 
 Sovellus on kehitetty harjoitustyöksi Helsingin yliopiston Ohjelmistotekniikan kurssille syksyllä 2022.
 
+** Uusin [release](https://github.com/suitsuke/ot-harjoitustyo/releases/tag/viikko5) **
+
 
 ### Huomio Python-versiosta
 
@@ -13,7 +15,7 @@ Ohjelmaa on testattu ja kehitetty versiolla 3.11.0. Vanhemmat versiot saattavat 
 
 ## Dokumentaatio
 
-- Käyttöohje (tulossa)
+- [Käyttöohje](dokumentaatio/kayttoohje.md)
 - [Vaatimusmäärittely](dokumentaatio/vaatimusmaarittely.md)
 - Arkkitehtuurikuvaus (tulossa)
 - Testausdokumentti (tulossa)
@@ -51,7 +53,6 @@ Testit saat kommennolla:
 ```bash
 poetry run invoke test
 ```
-Huom! 1.12: testien ajoon käytettävä userstickers.db-tiedostoa testikansiossa
 
 ### Testikattavuus
 

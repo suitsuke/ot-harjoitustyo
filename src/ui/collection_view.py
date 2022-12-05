@@ -33,16 +33,16 @@ class CollectionView:
         button.grid(row=5, column=6)
 
         # images
-        owned_images=self._service.total_stickers_by_user(self._user)
-        
-        #row 1
+        owned_images = self._service.total_stickers_by_user(self._user)
+
+        # row 1
         if 1 in owned_images:
             image1 = Image.open("data/images/1.png")
             photo1 = ImageTk.PhotoImage(image1)
             label1 = ttk.Label(self._frame, image=photo1)
             label1.image = photo1
             label1.grid(row=2, column=1)
-        
+
         if 2 in owned_images:
             image2 = Image.open("data/images/2.png")
             photo2 = ImageTk.PhotoImage(image2)
@@ -63,8 +63,8 @@ class CollectionView:
             label4 = ttk.Label(self._frame, image=photo4)
             label4.image = photo4
             label4.grid(row=2, column=4)
-        
-        #row2
+
+        # row2
         if 5 in owned_images:
             image5 = Image.open("data/images/5.png")
             photo5 = ImageTk.PhotoImage(image5)
@@ -93,7 +93,7 @@ class CollectionView:
             label8.image = photo8
             label8.grid(row=3, column=4)
 
-        #row3
+        # row3
         if 9 in owned_images:
             image9 = Image.open("data/images/9.png")
             photo9 = ImageTk.PhotoImage(image9)
@@ -121,4 +121,3 @@ class CollectionView:
             label12 = ttk.Label(self._frame, image=photo12)
             label12.image = photo12
             label12.grid(row=4, column=4)
-        

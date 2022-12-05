@@ -20,3 +20,35 @@ graph TD;
     services --> data
 ```
 
+## Tietojen tallennus
+
+Sovellus ei muokkaa tietokantaa stickers.db ollenkaan, vaan pelkästään lukee sen tietoja. Tietokantaa userstickers.db muokataan, ja se pitää huolta siitä, mitä tarroja kullakin käyttäjällä on. Se vastaa pysyväistallennuksesta, ja säilyttää tiedot myös jos ohjelma suljetaan.
+Huomioi, että testien ajo tyhjentää userstickers.db ja alustaa sen tyhjäksi merkinnällä (0,0), eli käyttäjällä 0 on tarra numero 0.
+
+## Toiminnallisuuksia
+
+```mermaid
+sequenceDiagram
+	participant ui
+	participant StickerService
+    activate ui
+	ui->>StickerService:__init__()
+    activate StickerService
+    participant StickersRepository
+    StickerService ->> StickersRepository:__init__()
+    activate StickersRepository
+    deactivate StickersRepository
+	deactivate StickerService
+
+    ui->>StickerService:add_random_sticker(1)
+    activate StickerService
+    StickerService->>StickersRepository:add_sticker(1,5)
+    activate StickersRepository
+    participant userstickers.db
+    StickersRepository->>userstickers.db:INSERT (1,5)
+    StickersRepository->>userstickers.db:SELECT user_id=1, sticker_id=5
+    StickersRepository->>StickerService:(1,5)
+    deactivate StickersRepository
+    deactivate StickerService
+    
+    deactivate ui

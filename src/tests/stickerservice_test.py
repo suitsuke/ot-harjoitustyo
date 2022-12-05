@@ -38,7 +38,7 @@ class TestStickersRepository(unittest.TestCase):
         except:
             pass
         return
-        #os.remove("data/userstickers.db")
+        # os.remove("data/userstickers.db")
 
     def test_total_stickers(self):
         # total amount of stickers in db
@@ -61,10 +61,9 @@ class TestStickersRepository(unittest.TestCase):
 
         # self.assertEqual(self.service.add_sticker(1), (1,5)) #for testing
 
-    def test_add_specific_sticker(self):    
-        self.assertEqual(self.service.add_specific_sticker(1,1),(1,1))
-        self.assertEqual(self.service.add_specific_sticker(1,1),-1)
-
+    def test_add_specific_sticker(self):
+        self.assertEqual(self.service.add_specific_sticker(1, 1), (1, 1))
+        self.assertEqual(self.service.add_specific_sticker(1, 1), -1)
 
     def test_add_all_stickers(self):
         # add stickers full for a user, check that they are added and finally return -1
@@ -76,18 +75,22 @@ class TestStickersRepository(unittest.TestCase):
         self.assertEqual(over_added, -1)
         over_added = self.service.add_random_sticker(3)
         self.assertEqual(over_added, -1)
-    
+
     def test_remove_sticker(self):
         for i in range(1, self.stickers_amount+1):
             self.service.add_random_sticker(3)
             self.assertEqual(len(self.service.total_stickers_by_user(3)), i)
-        self.assertEqual(self.service.total_stickers_by_user(3), [1,2,3,4,5,6,7,8,9,10,11,12])
-        
-        self.service.remove_sticker(3,1)
-        self.assertEqual(self.service.total_stickers_by_user(3), [2,3,4,5,6,7,8,9,10,11,12])
+        self.assertEqual(self.service.total_stickers_by_user(3), [
+                         1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 
-        self.service.remove_sticker(3,10)
-        self.assertEqual(self.service.total_stickers_by_user(3), [2,3,4,5,6,7,8,9,11,12])
+        self.service.remove_sticker(3, 1)
+        self.assertEqual(self.service.total_stickers_by_user(3), [
+                         2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 
-        self.service.remove_sticker(3,10)
-        self.assertEqual(self.service.total_stickers_by_user(3), [2,3,4,5,6,7,8,9,11,12])
+        self.service.remove_sticker(3, 10)
+        self.assertEqual(self.service.total_stickers_by_user(3), [
+                         2, 3, 4, 5, 6, 7, 8, 9, 11, 12])
+
+        self.service.remove_sticker(3, 10)
+        self.assertEqual(self.service.total_stickers_by_user(3), [
+                         2, 3, 4, 5, 6, 7, 8, 9, 11, 12])

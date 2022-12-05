@@ -10,7 +10,6 @@ class StickerService:
         #self.user_repo = user_repository
         default_stickerdb = "data/stickers.db"
         default_userdb = "data/userstickers.db"
-        test_userdb = "src/tests/userstickers.db"  # for testing
 
         self.db_stickers = sqlite3.connect(default_stickerdb)
         self.db_userstickers = sqlite3.connect(default_userdb)
@@ -38,17 +37,15 @@ class StickerService:
 
         # random_sticker = 5 testing
         insertion = self.repository.add_sticker(user, random_sticker)
-
         return insertion
-    
+
     def add_specific_sticker(self, user, sticker):
         # pyytää stickers_repository lisäämään tietyn tarran tietylle käyttäjälle
         # lisätään vain uusia tarroja joita ei omista
         # jos tarra jo omistetaan: palauttaa -1
-        total = self.total_stickers()
         # list of owned stickers by number:
         owned_stickers = self.total_stickers_by_user(user)
-        #if len(owned_stickers) >= total:
+        # if len(owned_stickers) >= total:
         #    return -1
         if sticker in owned_stickers:
             return -1
@@ -73,4 +70,3 @@ class StickerService:
         # pyytää stickers_repo poistamaan tarran joltain käyttäjältä
         # tämä on ehkä ylimääräinen toiminto, tarpeen jatkokehityksen tarranvaihdossa
         self.repository.remove_sticker(user, sticker)
-        return

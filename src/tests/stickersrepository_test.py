@@ -8,7 +8,7 @@ from services.stickerservice import StickerService
 class TestStickersRepository(unittest.TestCase):
     def setUp(self):
         try:
-           os.remove("data/userstickers.db") 
+            os.remove("data/userstickers.db")
         except:
             pass
         testdb = sqlite3.connect("data/userstickers.db")
@@ -41,21 +41,21 @@ class TestStickersRepository(unittest.TestCase):
         self.assertEqual(self.repo.find_all_by_user(1), [1])
         self.assertEqual(self.repo.find_all_by_user(2), [3])
 
-        self.repo.remove_sticker(1,1)
+        self.repo.remove_sticker(1, 1)
         self.assertEqual(self.repo.find_all_by_user(0), [0])
         self.assertEqual(self.repo.find_all_by_user(1), [])
         self.assertEqual(self.repo.find_all_by_user(2), [3])
 
-        self.repo.remove_sticker(1,1) #remove something that isnt in the db
+        self.repo.remove_sticker(1, 1)  # remove something that isnt in the db
         self.assertEqual(self.repo.find_all_by_user(0), [0])
         self.assertEqual(self.repo.find_all_by_user(1), [])
         self.assertEqual(self.repo.find_all_by_user(2), [3])
 
-        self.repo.remove_sticker(2,3) #remove something that isnt in the db
+        self.repo.remove_sticker(2, 3)  # remove something that isnt in the db
         self.assertEqual(self.repo.find_all_by_user(0), [0])
         self.assertEqual(self.repo.find_all_by_user(1), [])
         self.assertEqual(self.repo.find_all_by_user(2), [])
-        
+
         # returns true if sticker was removed
         #self.assertEqual(self.repo.remove_sticker(2, 3), True)
         # returns false if nothing was removed

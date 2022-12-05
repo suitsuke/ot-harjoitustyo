@@ -31,9 +31,9 @@ class StickersRepository:
     def remove_sticker(self, username: int, sticker: int):
         # removes sticker ownership from a user (if they own it)
         # return true if successful, false if not
-        self.db.execute("DELETE FROM UserStickers WHERE user_id=? AND sticker_id=?", [username, sticker])
+        self.db.execute("DELETE FROM UserStickers WHERE user_id=? AND sticker_id=?", [
+                        username, sticker])
         self.db.commit()
-        return
 
     def check_ownership(self, username, sticker):
         # checks if a user has a sticker or not

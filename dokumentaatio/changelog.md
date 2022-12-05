@@ -29,17 +29,14 @@
 - collection-ui osaa näyttää kaikki löytyneet tarrat tietyltä käyttäjältä
 - data/userstickers.db tallentaa tiedot kun ohjelma suljetaan
 - testaus toimii nyt ilman koodin muokkaamista välissä suoraan invoke-komennolla
-
-- todo: random-testaaminen?
-
-
-- todo: github release
+- github release
+- koodia siivottu, pylint-virheitä alle 5
+- readme päivitetty
 - todo: readmehen linkki releaseen
-- todo: coverage >40%
-- todo: pylint-virheitä <5
 - todo: dokumentaatioon sekvenssikaavio
-- todo: readme kuntoon
+
 
 ## Viikko 6
 - todo: ehkä tarrahistorian katselmointi
 - todo: ehkä käyttäjäasetuksia
+- todo: random-testaaminen?
