@@ -32,9 +32,9 @@
 - github release
 - koodia siivottu, pylint-virheitä alle 5
 - readme päivitetty
-- todo: readmehen linkki releaseen
-- todo: dokumentaatioon sekvenssikaavio
-
+- readmehen linkki releaseen
+- dokumentaatioon sekvenssikaavio (arkkitehtuuri-osastolla)
+- testaus cubblilla
 
 ## Viikko 6
 - todo: ehkä tarrahistorian katselmointi
