@@ -4,10 +4,16 @@
 
 ![rakenne](arkkitehtuuri2.png)
 
-Ohjelmassa ui hoitaa käyttöliittymän ja kutsuu sitten servicen kautta ohjelman toimintoja. Mikäli hoidetaan pysyväistallennusta, kutsuu services repositories toimintoja, muuten se voi itse kutsua datasta tietoa.
+Ohjelmassa ui hoitaa käyttöliittymän ja kutsuu sitten servicen kautta ohjelman toimintoja. Services kutsuu Repositories-hakemistoa etsimään ja hakemaan ja käsittelemään tietoa tietokannoista.
 
 ## Käyttöliittymä
- Kutsuu services-metodeja ja eristetty muuten logiikasta.
+Käyttöliittymä sisältää neljä eri näkymää.
+Ohjelma avautuu kirjautumisnäkymästä (login_view), josta voidaan valita käyttäjä. Valitsemalla käyttäjän siirrytään menu-näkymään (menu_view), josta päästään kaikkii muihin valikkoihin.
+- Toiminto-napit lisäävät satunnaisen tarran käyttäjälle joka on tällä hetkellä valittuna.
+- Collection-nappi siirtää kokoelma-näkymään (collection_view) jossa näkyy kerätyt tarrat kyseiselle käyttäjälle.
+- Settings-nappi vie asetusnäkymään (settings_view), josta käyttäjä voi asettaa tämän käyttäjän asetuksia.
+ 
+Käyttöliittymän napit kutsuvat services-luokan metodeja ja on eristetty muuten sovelluslogiikasta.
 
 ## Sovelluslogiikka
 
@@ -19,6 +25,7 @@ graph TD;
     repositories --> data;
     services --> data
 ```
+
 
 ## Tietojen tallennus
 

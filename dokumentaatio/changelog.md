@@ -37,6 +37,7 @@
 - testaus cubblilla
 
 ## Viikko 6
+- korjattu niin, että toimii python-versiolla 3.8
 - todo: ehkä tarrahistorian katselmointi
 - todo: ehkä käyttäjäasetuksia
 - todo: random-testaaminen?

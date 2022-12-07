@@ -16,10 +16,10 @@
 | 1.12. | 0.5  | cubblitestaus, repo+services osaa poistaa tarroja + testaus|
 | 2.12. | 1  | add-random ja add specific sticker, stickers.db + ikonien säätö|
 | 5.12. | 1  | Viikon 5 release, koodin siistiminen, dokumentaatio, testauksen korjaus|
+| 7.12. | 1.5  | ohjelman korjaaminen niin että toimii python-versiolla 3.8, testattu cubblilla|
 | .12. | x  | .|
 | .12. | x  | .|
 | .12. | x  | .|
 | .12. | x  | .|
 | .12. | x  | .|
-| .12. | x  | .|
-| Summa | 23.5  | tuntia|
+| Summa | 25  | tuntia|
