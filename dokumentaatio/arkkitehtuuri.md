@@ -17,13 +17,11 @@ Käyttöliittymän napit kutsuvat services-luokan metodeja ja on eristetty muute
 
 ## Sovelluslogiikka
 
-(TODO)
 ```mermaid
 graph TD;
     ui --> services;
     services --> repositories;
     repositories --> data;
-    services --> data
 ```
 
 
@@ -32,20 +30,18 @@ graph TD;
 Sovellus ei muokkaa tietokantaa stickers.db ollenkaan, vaan pelkästään lukee sen tietoja. Tietokantaa userstickers.db muokataan, ja se pitää huolta siitä, mitä tarroja kullakin käyttäjällä on. Se vastaa pysyväistallennuksesta, ja säilyttää tiedot myös jos ohjelma suljetaan.
 Huomioi, että testien ajo tyhjentää userstickers.db ja alustaa sen tyhjäksi merkinnällä (0,0), eli käyttäjällä 0 on tarra numero 0.
 
-## Toiminnallisuuksia
+## Päätoiminnallisuudet
+
+### Tarran lisääminen
 
 ```mermaid
 sequenceDiagram
 	participant ui
 	participant StickerService
     activate ui
-	ui->>StickerService:__init__()
-    activate StickerService
     participant StickersRepository
-    StickerService ->> StickersRepository:__init__()
     activate StickersRepository
     deactivate StickersRepository
-	deactivate StickerService
 
     ui->>StickerService:add_random_sticker(1)
     activate StickerService
@@ -59,3 +55,14 @@ sequenceDiagram
     deactivate StickerService
     
     deactivate ui
+```
+### Kokoelman avaaminen
+
+(TODO)
+
+### Käyttäjän asetusten vaihto
+
+(TODO)
+
+### Muut toiminnallisuudet
+Käyttäjä painaa käyttöliittymän nappeja, käyttöliittymä kutsuu Services-oliota, joka kutsuu repositoryä joka huolehtii toiminnan toteuttamisesta.
