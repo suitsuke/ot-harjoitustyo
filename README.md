@@ -6,7 +6,7 @@ Sovelluksen avulla käyttäjä voi kerätä tarroja suoritetuista arkiaskareista
 
 Sovellus on kehitetty harjoitustyöksi Helsingin yliopiston Ohjelmistotekniikan kurssille syksyllä 2022.
 
-** Uusin [release](https://github.com/suitsuke/ot-harjoitustyo/releases/tag/viikko5) **
+** Uusin [release](https://github.com/suitsuke/ot-harjoitustyo/releases/tag/viikko5.1) **
 
 
 ## Dokumentaatio
