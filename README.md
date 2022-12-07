@@ -9,10 +9,6 @@ Sovellus on kehitetty harjoitustyöksi Helsingin yliopiston Ohjelmistotekniikan 
 ** Uusin [release](https://github.com/suitsuke/ot-harjoitustyo/releases/tag/viikko5) **
 
 
-### Huomio Python-versiosta
-
-Ohjelmaa on testattu ja kehitetty versiolla 3.11.0. Vanhemmat versiot saattavat aiheuttaa ongelmia erityisesti tkinter-moduulin ja invoken kanssa.
-
 ## Dokumentaatio
 
 - [Käyttöohje](dokumentaatio/kayttoohje.md)
@@ -52,6 +48,13 @@ Testit saat kommennolla:
 
 ```bash
 poetry run invoke test
+```
+
+#### Ongelmatilanteet
+Ongelmatilanteiden pitäisi ratketa päivittämällä poetry komennolla:
+
+```bash
+poetry update
 ```
 
 ### Testikattavuus
