@@ -6,8 +6,6 @@ from repositories.stickers_repository import StickersRepository
 
 class StickerService:
     def __init__(self):
-        #self.sticker_repo = stickers_repository
-        #self.user_repo = user_repository
         default_stickerdb = "data/stickers.db"
         default_userdb = "data/userstickers.db"
 
@@ -21,21 +19,28 @@ class StickerService:
         all_stickers = all_stickers[0]
         return all_stickers
 
-    def add_random_sticker(self, user):
-        # pyytää stickers_repository lisäämään random tarran tietylle käyttäjälle
-        # lisätään vain uusia tarroja joita ei omista
-        # jos kaikki tarrat omistetaan, palauttaa -1
+    def add_random_sticker(self, user:int):
+        """Pyytää stickers_repositoryä lisäämään random tarran tietylle käyttäjälle.
+        Lisää vain sellaisia tarroja, joita käyttäjällä ei ole ennestään.
+        Jos kaikki tarrat jo omistetaan, palauttaa -1.
+
+        Args:
+            user (_type_): käyttäjä-id, 
+
+        Returns:
+            _type_: joko -1 jos tarraa ei lisätty, tai (user_id, sticker_id) jos onnistui
+        """
         total = self.total_stickers()
         random_sticker = random.randint(1, total)
-        # list of owned stickers by number:
+        # list of owned stickers sorted by number:
         owned_stickers = self.total_stickers_by_user(user)
         if len(owned_stickers) >= total:
             return -1
+
         # randomize until you find one that is now owned
         while int(random_sticker) in owned_stickers:
             random_sticker = random_sticker = random.randint(1, total)
 
-        # random_sticker = 5 testing
         insertion = self.repository.add_sticker(user, random_sticker)
         return insertion
 
@@ -70,3 +75,34 @@ class StickerService:
         # pyytää stickers_repo poistamaan tarran joltain käyttäjältä
         # tämä on ehkä ylimääräinen toiminto, tarpeen jatkokehityksen tarranvaihdossa
         self.repository.remove_sticker(user, sticker)
+    
+    def change_username(self, user_id:int, username:str):
+        """Pyytää repositoryä vaihtamaan käyttäjänimen.
+
+        Args:
+            user_id (int): käyttäjä-id int-muodossa
+            username (str): valittu nimi käyttäjälle
+        """
+        self.repository.change_username(user_id, username)
+    
+    def change_action(self, user_id:int, action_id:int, action_description:str):
+        """Changes the text of the action buttons in the ui.
+
+        Args:
+            user_id (int): user_id number
+            action_id (int): id-number of the action (1,2 or 3)
+            action_description (str): A description of the action. Max length 30.
+        """
+        if len(action_description) >30:
+            return -1
+        else:
+            self.repository.change_action(user_id, action_id, action_description)
+
+    def find_action(self, user_id:int, action_id:int):
+        """Find the the text for the action buttons. Returns a string.
+
+        Args:
+            user_id (int): user-id as number
+            action_id (int): action-id as number (1, 2 or 3)
+        """
+        return self.repository.find_action(user_id, action_id)

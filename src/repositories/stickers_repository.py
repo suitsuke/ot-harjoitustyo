@@ -40,3 +40,48 @@ class StickersRepository:
         # returns True if user has sticker, returns False if they don't
 
         pass
+
+    def change_username(self, user_id:int, username:str):
+        """Changes the username of a given user_id.
+
+        Args:
+            user_id (int): user_id of the user whose name will be changed
+            username (str): a chosen username
+        """
+        self.db.execute("UPDATE Users SET name=? WHERE user_id=?", [username, user_id])
+        self.db.commit()
+    
+    def change_action(self, user_id:int, action_id:int, action_description:str):
+        """Changes the text displayed on the task button.
+
+        Args:
+            user_id (int): Current user.
+            task_id (int): Which button to change (1, 2 or 3)
+            task_description (str): New text.
+        """
+        if action_id == 1:
+            self.db.execute("UPDATE Users SET action1=? WHERE user_id=?", [action_description, user_id])
+            self.db.commit()
+        elif action_id == 2:
+            self.db.execute("UPDATE Users SET action2=? WHERE user_id=?", [action_description, user_id])
+            self.db.commit()
+        elif action_id == 3:
+            self.db.execute("UPDATE Users SET action3=? WHERE user_id=?", [action_description, user_id])
+            self.db.commit()
+    
+    def find_action(self, user_id:int, action_id:int):
+        """Find the name of the action from the database. Returns it as a string.
+
+        Args:
+            user_id (int): user id as a number
+            action_id (int): action id as a number (1,2 or 3)
+        """
+        if action_id == 1:
+            text = self.db.execute("SELECT action1 FROM Users WHERE user_id=?", [user_id]).fetchone()    
+        elif action_id == 2:
+            text = self.db.execute("SELECT action2 FROM Users WHERE user_id=?", [user_id]).fetchone()    
+        elif action_id == 3:
+            text = self.db.execute("SELECT action3 FROM Users WHERE user_id=?", [user_id]).fetchone()
+        
+        return text[0]
+            

@@ -73,6 +73,7 @@ class UI:
         self._hide_current_view()
         self._current_view = SettingsView(
             self._root,
-            self._handle_menu
+            self._handle_menu,
+            self._user
         )
         self._current_view.pack()

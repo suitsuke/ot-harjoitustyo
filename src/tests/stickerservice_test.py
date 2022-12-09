@@ -12,26 +12,43 @@ default_userdb = "tests/userstickers.db"
 class TestStickersRepository(unittest.TestCase):
     def setUp(self):
         # set up userstickers
-        
+
         os.remove("data/userstickers.db")
-        
+
         self.testdb = sqlite3.connect("data/userstickers.db")
         self.testdb.isolation_level = None
         self.testdb.execute(
             "CREATE TABLE UserStickers (user_id INTEGER REFERENCES Users, sticker_id INTEGER REFERENCES Stickers)")
         self.testdb.execute(
             "INSERT INTO UserStickers (user_id, sticker_id) VALUES (0, 0)")
+        self.testdb.execute(
+            "CREATE TABLE Users (user_id INTEGER, name TEXT, action1 TEXT, action2 TEXT, action3 TEXT)")
+        self.testdb.execute(
+            "INSERT INTO Users (user_id, name, action1, action2, action3) VALUES (1, 'user1', 'action1', 'action2', 'action3')")
+        self.testdb.execute(
+            "INSERT INTO Users (user_id, name, action1, action2, action3) VALUES (2, 'user2', 'action1', 'action2', 'action3')")
+        self.testdb.execute(
+            "INSERT INTO Users (user_id, name, action1, action2, action3) VALUES (3, 'user3', 'action1', 'action2', 'action3')")
         self.service = StickerService()
         self.stickers_amount = 12
 
     def tearDown(self):
-            os.remove("data/userstickers.db")
-            self.testdb = sqlite3.connect("data/userstickers.db")
-            self.testdb.isolation_level = None
-            self.testdb.execute(
-                "CREATE TABLE UserStickers (user_id INTEGER REFERENCES Users, sticker_id INTEGER REFERENCES Stickers)")
-            self.testdb.execute(
-                "INSERT INTO UserStickers (user_id, sticker_id) VALUES (0, 0)")
+        os.remove("data/userstickers.db")
+        self.testdb = sqlite3.connect("data/userstickers.db")
+        self.testdb.isolation_level = None
+        self.testdb.execute(
+            "CREATE TABLE UserStickers (user_id INTEGER REFERENCES Users, sticker_id INTEGER REFERENCES Stickers)")
+        self.testdb.execute(
+            "INSERT INTO UserStickers (user_id, sticker_id) VALUES (0, 0)")
+        self.testdb.execute(
+            "CREATE TABLE Users (user_id INTEGER, name TEXT, action1 TEXT, action2 TEXT, action3 TEXT)")
+        self.testdb.execute(
+            "INSERT INTO Users (user_id, name, action1, action2, action3) VALUES (1, 'user1', 'action1', 'action2', 'action3')")
+        self.testdb.execute(
+            "INSERT INTO Users (user_id, name, action1, action2, action3) VALUES (2, 'user2', 'action1', 'action2', 'action3')")
+        self.testdb.execute(
+            "INSERT INTO Users (user_id, name, action1, action2, action3) VALUES (3, 'user3', 'action1', 'action2', 'action3')")
+        
 
     def test_total_stickers(self):
         # total amount of stickers in db
@@ -87,3 +104,28 @@ class TestStickersRepository(unittest.TestCase):
         self.service.remove_sticker(3, 10)
         self.assertEqual(self.service.total_stickers_by_user(3), [
                          2, 3, 4, 5, 6, 7, 8, 9, 11, 12])
+    
+    def test_change_user(self):
+        before = self.testdb.execute("SELECT name FROM Users WHERE user_id=1").fetchone()
+        self.service.change_username(1, "miki")
+        after = self.testdb.execute("SELECT name FROM Users WHERE user_id=1").fetchone()
+        self.assertNotEqual(before, after)
+    
+    def test_change_action_successfully(self):
+        before = self.testdb.execute("SELECT action1 FROM Users WHERE user_id=1").fetchone()
+        self.service.change_action(1,1,'test')
+        after = self.testdb.execute("SELECT action1 FROM Users WHERE user_id=1").fetchone()
+        self.assertNotEqual(before, after)
+    
+    def test_change_action_too_long(self):
+        before = self.testdb.execute("SELECT action1 FROM Users WHERE user_id=1").fetchone()
+        self.assertEqual(self.service.change_action(1,1,'123456789012345678901234567890+'), -1)
+        after = self.testdb.execute("SELECT action1 FROM Users WHERE user_id=1").fetchone()
+        self.assertEqual(before,after)
+    
+    def test_find_action(self):
+        self.assertEqual(self.service.find_action(1,1), "action1")
+        self.service.change_action(2,2,"test")
+        self.assertEqual(self.service.find_action(2,2), "test")
+        self.service.change_action(3,3,"1234")
+        self.assertEqual(self.service.find_action(3,3), "1234")

@@ -2,10 +2,11 @@ from tkinter import ttk, constants
 
 
 class SettingsView:
-    def __init__(self, root, handle_menu):
+    def __init__(self, root, handle_menu, user):
         self._root = root
         self._handle_menu = handle_menu
         self._frame = None
+        self._user = user
 
         self._initialize()
 
