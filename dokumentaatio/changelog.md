@@ -55,3 +55,4 @@
 - todo: random-testaaminen?
 - todo: arkkitehtuuri-sivulla uuden rakennekaavion piirto
 - todo: python libraries used
+- todo: collection screen: jos tarroja = 0: display label "no stickers yet"
