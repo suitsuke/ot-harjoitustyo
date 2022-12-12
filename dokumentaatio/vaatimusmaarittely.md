@@ -22,18 +22,17 @@ jokaisella käyttäjällä on eri historia ja tarrakokoelma.
 
 - Käyttäjä valitsee tai luo käyttäjätunnuksen (tehty)
 - Käyttäjiä 3 (tehty)
-- Jos kirjautuminen epäonnistuu, ilmoitetaan siitä ja palataan käyttäjävalikkoon
 - Graafinen selkeä sopiva kirjautumisnäkymä (tehty)
 
 ### Kirjautumisen jälkeen
 
-- Käyttäjä voi valita askareen jota suoritetaan klikkaamalla
+- Käyttäjä voi valita askareen jota suoritetaan klikkaamalla (tehty)
 - Suorituksesta saa merkin kirjaan/kalenteriin, ja satunnaisesti valitun tarran joka lisätään tarrakirjaan (tehty)
 - Käyttäjän keräämät tarrat (numeroitu) ja niiden tekstikuvaus tallennetaan tietokantaan. (tehty)
 - Tarrat on omassa tietokannassa ja toinen tietokanta pitää huolen mikä käyttäjä (id) on kerännyt mitkäkin tarrat. (tehty)
 - Käyttäjä voi avata tarrakirjan, josta näkee kaikki kerätyt tarrat (tehty)
 - Käyttäjä voi avata kalenterin/login josta näkee eri suoritetut askareet päivämäärän ja ajan mukaan
-- Asetuksista voi muuttaa käyttäjäpreferenssejä
+- Asetuksista voi muuttaa käyttäjäpreferenssejä (tehty)
 
 ## Jatkokehitysideoita
 
@@ -42,6 +41,7 @@ jokaisella käyttäjällä on eri historia ja tarrakokoelma.
 - Käyttäjiä enemmän (esim. 5)
 - Tarrojen luokittelu eri askareiden mukaan niin että tietyntyyppiset askareet suosivat 
 tietyn tyyppisiä tarroja
+- Samaa tarraa voi kerätä monta kappaletta
 - Tarrojen vaihtaminen käyttäjien välillä
 - Tilastojen luominen askareista
 - Pisteiden kerääminen askareista ja "tarrakauppa"

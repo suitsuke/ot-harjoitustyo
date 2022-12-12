@@ -3,6 +3,8 @@ from ui.ui import UI
 
 
 def main():
+    """Käynnistää graafisen käyttöliittymän.
+    """
     window = Tk()
     window.title("Stickers")
     window_width = 600

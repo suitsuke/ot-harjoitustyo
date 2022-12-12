@@ -44,9 +44,14 @@
     - lisätty käyttäjäasetukset käyttöliittymään
 - login ja menu osaa hakea oikeat tekstit nappeihin
 - dokumentaatiota lisätty sekä koodiin että omille sivuille
+- todo: testaus cubblilla
 
 
 ## Viikko 7
 - todo: ehkä tarrahistorian katselmointi
 - todo: käyttöliittymän siistiminen
+    - ilmoitus kun käyttäjätunnus/toiminto on muutettu ja tekstiruudun tyhjennys
+- todo: collection-näkymässä tarran hoverointi näyttää tarran tekstin
 - todo: random-testaaminen?
+- todo: arkkitehtuuri-sivulla uuden rakennekaavion piirto
+- todo: python libraries used

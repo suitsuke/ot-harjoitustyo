@@ -6,6 +6,13 @@ from repositories.stickers_repository import StickersRepository
 
 class StickerService:
     def __init__(self):
+        """Luokka joka hoitaa käyttöliittymän interaktion muiden luokkien kanssa.
+
+        Args:
+            db_stickers = tarrojen tietokanta, taulu Stickers
+            db_userstickers = käyttäjätietojen tietokanta, taulut Users ja UserStickers
+            repository = StickersRepository joka käsittelee tietokantoja
+        """
         default_stickerdb = "data/stickers.db"
         default_userdb = "data/userstickers.db"
 
@@ -14,6 +21,11 @@ class StickerService:
         self.repository = StickersRepository(self.db_userstickers)
 
     def total_stickers(self):
+        """Laskee stickers.db-tietokannan tarrojen määrän.
+
+        Returns:
+            int: lukumäärä
+        """
         all_stickers = self.db_stickers.execute(
             "SELECT COUNT(*) FROM Stickers").fetchone()
         all_stickers = all_stickers[0]
@@ -44,14 +56,20 @@ class StickerService:
         insertion = self.repository.add_sticker(user, random_sticker)
         return insertion
 
-    def add_specific_sticker(self, user, sticker):
-        # pyytää stickers_repository lisäämään tietyn tarran tietylle käyttäjälle
-        # lisätään vain uusia tarroja joita ei omista
-        # jos tarra jo omistetaan: palauttaa -1
-        # list of owned stickers by number:
+    def add_specific_sticker(self, user: int, sticker: int):
+        """Pyytää repositoryä lisäämään tietylle käyttäjälle tietyn tarran.
+        Lisää vain tarroja, joita ei omisteta ennestään.
+
+        Args:
+            user (int): user-id
+            sticker (int): sticker-id
+
+        Returns:
+            int or tuple: -1 jos tarra omistettiin aiemmin, tuple lisäyksestä jos onnistui
+        """
+
         owned_stickers = self.total_stickers_by_user(user)
-        # if len(owned_stickers) >= total:
-        #    return -1
+
         if sticker in owned_stickers:
             return -1
 
@@ -59,9 +77,15 @@ class StickerService:
 
         return insertion
 
-    def total_stickers_by_user(self, user):
-        # pyytää stickers_repo hakemaan listan tietyn käyttäjän kaikista tarroista
-        # lajiteltuna pienestä isompaan
+    def total_stickers_by_user(self, user: int):
+        """Pyytää repositoryä hakemaan listan tietyn käyttäjän kaikista tarroista.
+
+        Args:
+            user (int): user-id numerona
+
+        Returns:
+            list: kasvavassa järjestyksessä oleva lista tarrojen id:stä
+        """
         sticker_list = self.repository.find_all_by_user(user)
 
         return sticker_list
@@ -71,9 +95,13 @@ class StickerService:
         # palauttaa ne jossain muodossa jota ui.collection osaa näyttää
         pass
 
-    def remove_sticker(self, user, sticker):
-        # pyytää stickers_repo poistamaan tarran joltain käyttäjältä
-        # tämä on ehkä ylimääräinen toiminto, tarpeen jatkokehityksen tarranvaihdossa
+    def remove_sticker(self, user: int, sticker: int):
+        """Pyytää repositoryä poistamaan tietyn tarran tietyltä käyttäjältä.
+
+        Args:
+            user (int): käyttäjä-id jolta poistetaan
+            sticker (int): tarra-id joka poistetaan
+        """
         self.repository.remove_sticker(user, sticker)
 
     def change_username(self, user_id: int, username: str):
