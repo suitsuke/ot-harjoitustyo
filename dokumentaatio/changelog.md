@@ -44,7 +44,7 @@
     - lisätty käyttäjäasetukset käyttöliittymään
 - login ja menu osaa hakea oikeat tekstit nappeihin
 - dokumentaatiota lisätty sekä koodiin että omille sivuille
-- todo: testaus cubblilla
+- testaus cubblilla
 
 
 ## Viikko 7
