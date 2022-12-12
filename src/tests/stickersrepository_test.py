@@ -86,32 +86,40 @@ class TestStickersRepository(unittest.TestCase):
         self.repo.add_sticker(2, 1)
         self.assertEqual(self.repo.find_all_by_user(1), [1, 5, 6])
         self.assertEqual(self.repo.find_all_by_user(2), [1, 3])
-    
+
     def test_change_username(self):
-        before = self.testdb.execute("SELECT name FROM Users WHERE user_id=1").fetchone()
-        self.repo.change_username(1,"miki")
-        after = self.testdb.execute("SELECT name FROM Users WHERE user_id=1").fetchone()
+        before = self.testdb.execute(
+            "SELECT name FROM Users WHERE user_id=1").fetchone()
+        self.repo.change_username(1, "miki")
+        after = self.testdb.execute(
+            "SELECT name FROM Users WHERE user_id=1").fetchone()
         self.assertNotEqual(before, after)
-    
+
     def test_change_action(self):
-        before = self.testdb.execute("SELECT action1 FROM Users WHERE user_id=1").fetchone()
-        self.repo.change_action(1,1,'new action')
-        after = self.testdb.execute("SELECT action1 FROM Users WHERE user_id=1").fetchone()
+        before = self.testdb.execute(
+            "SELECT action1 FROM Users WHERE user_id=1").fetchone()
+        self.repo.change_action(1, 1, 'new action')
+        after = self.testdb.execute(
+            "SELECT action1 FROM Users WHERE user_id=1").fetchone()
         self.assertNotEqual(before, after)
 
-        before = self.testdb.execute("SELECT action2 FROM Users WHERE user_id=2").fetchone()
-        self.repo.change_action(2,2,'new action')
-        after = self.testdb.execute("SELECT action2 FROM Users WHERE user_id=2").fetchone()
+        before = self.testdb.execute(
+            "SELECT action2 FROM Users WHERE user_id=2").fetchone()
+        self.repo.change_action(2, 2, 'new action')
+        after = self.testdb.execute(
+            "SELECT action2 FROM Users WHERE user_id=2").fetchone()
         self.assertNotEqual(before, after)
 
-        before = self.testdb.execute("SELECT action3 FROM Users WHERE user_id=3").fetchone()
-        self.repo.change_action(3,3,'new action')
-        after = self.testdb.execute("SELECT action3 FROM Users WHERE user_id=3").fetchone()
+        before = self.testdb.execute(
+            "SELECT action3 FROM Users WHERE user_id=3").fetchone()
+        self.repo.change_action(3, 3, 'new action')
+        after = self.testdb.execute(
+            "SELECT action3 FROM Users WHERE user_id=3").fetchone()
         self.assertNotEqual(before, after)
 
     def test_find_action(self):
-        self.assertEqual(self.repo.find_action(1,1), 'action1')
-    
+        self.assertEqual(self.repo.find_action(1, 1), 'action1')
+
     def test_find_username(self):
         self.assertEqual(self.repo.find_username(1), "user1")
         self.assertEqual(self.repo.find_username(2), "user2")

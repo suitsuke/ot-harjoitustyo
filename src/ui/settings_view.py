@@ -25,8 +25,8 @@ class SettingsView:
         entry_value = self._username_entry.get()
         self._service.change_username(self._user, entry_value)
         print("username changed to", entry_value)
-    
-    def _handle_actionbutton_click(self, number:int):
+
+    def _handle_actionbutton_click(self, number: int):
         if number == 1:
             entry_value = self._action1_entry.get()
         elif number == 2:
@@ -46,7 +46,7 @@ class SettingsView:
             text="Back to Menu",
             command=self._handle_menu
         )
-        #Username
+        # Username
         username_label = ttk.Label(master=self._frame, text="Change username")
         self._username_entry = ttk.Entry(master=self._frame)
         username_button = ttk.Button(
@@ -54,38 +54,38 @@ class SettingsView:
             text="Change",
             command=self._handle_userbutton_click
         )
-        #Action 1
+        # Action 1
         action1_label = ttk.Label(master=self._frame, text="Change action 1")
         self._action1_entry = ttk.Entry(master=self._frame)
         action1_button = ttk.Button(
             master=self._frame,
             text="Change",
-            command=lambda:self._handle_actionbutton_click(1)
+            command=lambda: self._handle_actionbutton_click(1)
         )
-        #Action 2
+        # Action 2
         action2_label = ttk.Label(master=self._frame, text="Change action 2")
         self._action2_entry = ttk.Entry(master=self._frame)
         action2_button = ttk.Button(
             master=self._frame,
             text="Change",
-            command=lambda:self._handle_actionbutton_click(2)
+            command=lambda: self._handle_actionbutton_click(2)
         )
-        #Action 3
+        # Action 3
         action3_label = ttk.Label(master=self._frame, text="Change action 3")
         self._action3_entry = ttk.Entry(master=self._frame)
         action3_button = ttk.Button(
             master=self._frame,
             text="Change",
-            command=lambda:self._handle_actionbutton_click(3)
+            command=lambda: self._handle_actionbutton_click(3)
         )
 
         label.grid(row=0, column=0)
         back_button.grid(row=1, column=0)
-        
+
         username_label.grid(row=2, column=0)
         self._username_entry.grid(row=2, column=1)
         username_button.grid(row=2, column=2)
-        
+
         action1_label.grid(row=5, column=0)
         self._action1_entry.grid(row=5, column=1)
         action1_button.grid(row=5, column=2)
@@ -97,4 +97,3 @@ class SettingsView:
         action3_label.grid(row=7, column=0)
         self._action3_entry.grid(row=7, column=1)
         action3_button.grid(row=7, column=2)
-

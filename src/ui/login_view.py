@@ -1,12 +1,14 @@
 from tkinter import ttk, constants
+from services.stickerservice import StickerService
 
 
 class LoginView:
-    def __init__(self, root, handle_menu, change_user):
+    def __init__(self, root, handle_menu, change_user, service):
         self._root = root
         self._handle_menu = handle_menu
         self._frame = None
         self._change_user = change_user
+        self._service = service
 
         self._initialize()
 
@@ -27,17 +29,17 @@ class LoginView:
 
         user1_button = ttk.Button(
             master=self._frame,
-            text="User 1",
+            text=self._service.find_username(1),
             command=lambda: self.change_user(1)
         )
         user2_button = ttk.Button(
             master=self._frame,
-            text="User 2",
+            text=self._service.find_username(2),
             command=lambda: self.change_user(2)
         )
         user3_button = ttk.Button(
             master=self._frame,
-            text="User 3",
+            text=self._service.find_username(3),
             command=lambda: self.change_user(3)
         )
 

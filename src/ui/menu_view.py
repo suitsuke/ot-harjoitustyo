@@ -56,17 +56,17 @@ class MenuView:
         )
         button_a1 = ttk.Button(
             master=self._frame,
-            text="Action1",
+            text=self.service.find_action(self.user, 1),
             command=lambda: self._handle_button_click(1)
         )
         button_a2 = ttk.Button(
             master=self._frame,
-            text="Action2",
+            text=self.service.find_action(self.user, 2),
             command=lambda: self._handle_button_click(2)
         )
         button_a3 = ttk.Button(
             master=self._frame,
-            text="Action3",
+            text=self.service.find_action(self.user, 3),
             command=lambda: self._handle_button_click(3)
         )
 

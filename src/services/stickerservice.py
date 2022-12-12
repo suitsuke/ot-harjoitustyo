@@ -19,13 +19,13 @@ class StickerService:
         all_stickers = all_stickers[0]
         return all_stickers
 
-    def add_random_sticker(self, user:int):
+    def add_random_sticker(self, user: int):
         """Pyytää stickers_repositoryä lisäämään random tarran tietylle käyttäjälle.
         Lisää vain sellaisia tarroja, joita käyttäjällä ei ole ennestään.
         Jos kaikki tarrat jo omistetaan, palauttaa -1.
 
         Args:
-            user (_type_): käyttäjä-id, 
+            user (int): käyttäjä-id numerona
 
         Returns:
             _type_: joko -1 jos tarraa ei lisätty, tai (user_id, sticker_id) jos onnistui
@@ -75,40 +75,46 @@ class StickerService:
         # pyytää stickers_repo poistamaan tarran joltain käyttäjältä
         # tämä on ehkä ylimääräinen toiminto, tarpeen jatkokehityksen tarranvaihdossa
         self.repository.remove_sticker(user, sticker)
-    
-    def change_username(self, user_id:int, username:str):
+
+    def change_username(self, user_id: int, username: str):
         """Pyytää repositoryä vaihtamaan käyttäjänimen. Sallittu pituus 1-30 merkkiä.
 
         Args:
             user_id (int): käyttäjä-id int-muodossa
             username (str): valittu nimi käyttäjälle
+        Returns:
+            int: 1 if successful, -1 if not
         """
-        if len(username) >30 or len(username) == 0:
+        if len(username) > 30 or len(username) == 0:
             return -1
         self.repository.change_username(user_id, username)
-    
-    def change_action(self, user_id:int, action_id:int, action_description:str):
+        return 1
+
+    def change_action(self, user_id: int, action_id: int, action_description: str):
         """Changes the text of the action buttons in the ui.
 
         Args:
             user_id (int): user_id number
             action_id (int): id-number of the action (1,2 or 3)
             action_description (str): A description of the action. Max length 30.
+        Returns:
+            int: 1 if successful, -1 if not
         """
-        if len(action_description) >30:
+        if len(action_description) > 30:
             return -1
-        else:
-            self.repository.change_action(user_id, action_id, action_description)
 
-    def find_username(self, user_id:int):
+        self.repository.change_action(user_id, action_id, action_description)
+        return 1
+
+    def find_username(self, user_id: int):
         """Find the the username. Returns as a string.
 
         Args:
             user_id (int): user-id as number
         """
         return self.repository.find_username(user_id)
-    
-    def find_action(self, user_id:int, action_id:int):
+
+    def find_action(self, user_id: int, action_id: int):
         """Find the the text for the action buttons. Returns a string.
 
         Args:

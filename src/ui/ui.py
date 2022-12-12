@@ -42,7 +42,8 @@ class UI:
         self._current_view = LoginView(
             self._root,
             self._handle_menu,
-            self._change_user
+            self._change_user,
+            self._service
         )
         self._current_view.pack()
 

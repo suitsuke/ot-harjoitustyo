@@ -42,10 +42,11 @@
     - change_username toimii + testattu servicellä ja repolla
     - find_username toimii + testattu servicellä ja repolla
     - lisätty käyttäjäasetukset käyttöliittymään
-- (todo) login ja menu osaa hakea oikeat tekstit nappeihin
+- login ja menu osaa hakea oikeat tekstit nappeihin
 - dokumentaatiota lisätty sekä koodiin että omille sivuille
 
 
 ## Viikko 7
 - todo: ehkä tarrahistorian katselmointi
+- todo: käyttöliittymän siistiminen
 - todo: random-testaaminen?
