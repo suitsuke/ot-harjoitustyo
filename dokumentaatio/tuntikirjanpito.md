@@ -17,9 +17,9 @@
 | 2.12. | 1  | add-random ja add specific sticker, stickers.db + ikonien säätö|
 | 5.12. | 1  | Viikon 5 release, koodin siistiminen, dokumentaatio, testauksen korjaus|
 | 7.12. | 3.5  | ohjelman korjaaminen niin että toimii python-versiolla 3.8, testattu cubblilla, users-tietokannan aloitus, dokumentaatio|
+| 9.12. | 2  | käyttäjäasetusten aloitus: change&find action, change&find username, + graafinen ui|
 | .12. | x  | .|
 | .12. | x  | .|
 | .12. | x  | .|
 | .12. | x  | .|
-| .12. | x  | .|
-| Summa | 27  | tuntia|
+| Summa | 29.5  | tuntia|

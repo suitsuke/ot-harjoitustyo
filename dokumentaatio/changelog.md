@@ -38,10 +38,11 @@
 
 ## Viikko 6
 - korjattu niin, että toimii python-versiolla 3.8
-- todo: käyttäjäasetuksia
+- käyttäjäasetuksia
     - change_username toimii + testattu servicellä ja repolla
     - find_username toimii + testattu servicellä ja repolla
-    - (todo) lisää käyttäjäasetukset käyttöliittymään
+    - lisätty käyttäjäasetukset käyttöliittymään
+- (todo) login ja menu osaa hakea oikeat tekstit nappeihin
 - dokumentaatiota lisätty sekä koodiin että omille sivuille
 
 

@@ -129,3 +129,6 @@ class TestStickersRepository(unittest.TestCase):
         self.assertEqual(self.service.find_action(2,2), "test")
         self.service.change_action(3,3,"1234")
         self.assertEqual(self.service.find_action(3,3), "1234")
+    
+    def test_find_username(self):
+        self.assertEqual(self.service.find_username(1), "user1")

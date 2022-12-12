@@ -84,4 +84,14 @@ class StickersRepository:
             text = self.db.execute("SELECT action3 FROM Users WHERE user_id=?", [user_id]).fetchone()
         
         return text[0]
+    
+    def find_username(self, user_id:int):
+        """Find the name of the user from the database. Returns it as a string.
+
+        Args:
+            user_id (int): user id as a number
+        """
+        text = self.db.execute("SELECT name FROM Users WHERE user_id=?", [user_id]).fetchone()    
+        
+        return text[0]
             

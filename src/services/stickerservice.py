@@ -77,12 +77,14 @@ class StickerService:
         self.repository.remove_sticker(user, sticker)
     
     def change_username(self, user_id:int, username:str):
-        """Pyytää repositoryä vaihtamaan käyttäjänimen.
+        """Pyytää repositoryä vaihtamaan käyttäjänimen. Sallittu pituus 1-30 merkkiä.
 
         Args:
             user_id (int): käyttäjä-id int-muodossa
             username (str): valittu nimi käyttäjälle
         """
+        if len(username) >30 or len(username) == 0:
+            return -1
         self.repository.change_username(user_id, username)
     
     def change_action(self, user_id:int, action_id:int, action_description:str):
@@ -98,6 +100,14 @@ class StickerService:
         else:
             self.repository.change_action(user_id, action_id, action_description)
 
+    def find_username(self, user_id:int):
+        """Find the the username. Returns as a string.
+
+        Args:
+            user_id (int): user-id as number
+        """
+        return self.repository.find_username(user_id)
+    
     def find_action(self, user_id:int, action_id:int):
         """Find the the text for the action buttons. Returns a string.
 

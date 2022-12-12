@@ -111,3 +111,8 @@ class TestStickersRepository(unittest.TestCase):
 
     def test_find_action(self):
         self.assertEqual(self.repo.find_action(1,1), 'action1')
+    
+    def test_find_username(self):
+        self.assertEqual(self.repo.find_username(1), "user1")
+        self.assertEqual(self.repo.find_username(2), "user2")
+        self.assertEqual(self.repo.find_username(3), "user3")
