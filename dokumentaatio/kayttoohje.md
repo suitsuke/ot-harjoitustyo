@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa uusin [release](https://github.com/suitsuke/ot-harjoitustyo/releases/tag/viikko5.1).
+Lataa uusin [release](https://github.com/suitsuke/ot-harjoitustyo/releases/tag/viikko6).
 
 
 ## Käynnistäminen
