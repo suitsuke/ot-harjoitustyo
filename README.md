@@ -13,7 +13,7 @@ Sovellus on kehitetty harjoitustyöksi Helsingin yliopiston Ohjelmistotekniikan 
 
 - [Käyttöohje](dokumentaatio/kayttoohje.md)
 - [Vaatimusmäärittely](dokumentaatio/vaatimusmaarittely.md)
-- Arkkitehtuurikuvaus (tulossa)
+- [Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuuri.md)
 - Testausdokumentti (tulossa)
 - [Työaikakirjanpito](dokumentaatio/tuntikirjanpito.md)
 - [Changelog](dokumentaatio/changelog.md)
