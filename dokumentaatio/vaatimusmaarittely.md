@@ -31,19 +31,18 @@ jokaisella käyttäjällä on eri historia ja tarrakokoelma.
 - Käyttäjän keräämät tarrat (numeroitu) ja niiden tekstikuvaus tallennetaan tietokantaan. (tehty)
 - Tarrat on omassa tietokannassa ja toinen tietokanta pitää huolen mikä käyttäjä (id) on kerännyt mitkäkin tarrat. (tehty)
 - Käyttäjä voi avata tarrakirjan, josta näkee kaikki kerätyt tarrat (tehty)
-- Käyttäjä voi avata kalenterin/login josta näkee eri suoritetut askareet päivämäärän ja ajan mukaan
-- Asetuksista voi muuttaa käyttäjäpreferenssejä (tehty)
+- Asetuksista voi muuttaa käyttäjänimen ja mitä askareita tehdään (tehty)
+- Asetuksista voidaan poistaa kaikki saavutetut tarrat (tehty)
 
 ## Jatkokehitysideoita
 
 - Enemmän tarroja
-- Kirjautumiseen voidaan asettaa salasana tai onnistunut haastava kertolasku
+- Kirjautumiseen voidaan asettaa salasana tai haastava kertolasku
 - Käyttäjiä enemmän (esim. 5)
 - Tarrojen luokittelu eri askareiden mukaan niin että tietyntyyppiset askareet suosivat 
 tietyn tyyppisiä tarroja
-- Samaa tarraa voi kerätä monta kappaletta
+- Samaa tarraa voi kerätä monta kappaletta ja se esitetään käyttäjälle kokoelmassa
 - Tarrojen vaihtaminen käyttäjien välillä
-- Tilastojen luominen askareista
+- Tilastojen ja historian luominen askareista ja suoritusajoista
+- Käyttäjä voi avata kalenterin/login josta näkee eri suoritetut askareet päivämäärän ja ajan mukaan
 - Pisteiden kerääminen askareista ja "tarrakauppa"
-- Mahdollisuus käyttäjälle määritellä erilaiset askareet perustoiminnallisuuksien ohella
-- Mahdollisuus käyttäjälle itse valita mitkä askareet kuuluvat päävalikon nappuloihin 

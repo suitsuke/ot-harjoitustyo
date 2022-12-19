@@ -90,11 +90,6 @@ class StickerService:
 
         return sticker_list
 
-    def all_stickers(self):
-        # hakee listan kaikista tarroista ja niiden tiedoista
-        # palauttaa ne jossain muodossa jota ui.collection osaa näyttää
-        pass
-
     def remove_sticker(self, user: int, sticker: int):
         """Pyytää repositoryä poistamaan tietyn tarran tietyltä käyttäjältä.
 
@@ -103,6 +98,11 @@ class StickerService:
             sticker (int): tarra-id joka poistetaan
         """
         self.repository.remove_sticker(user, sticker)
+
+    def remove_all_stickers(self, user: int):
+        all_stickers = self.total_stickers()
+        for i in range(1, all_stickers+1):
+            self.remove_sticker(user, i)
 
     def change_username(self, user_id: int, username: str):
         """Pyytää repositoryä vaihtamaan käyttäjänimen. Sallittu pituus 1-30 merkkiä.

@@ -22,10 +22,8 @@ class SettingsView:
         self._frame.destroy()
 
     def _handle_removebutton_click(self):
-        #todo
-        entry_value = self._username_entry.get()
-        self._service.change_username(self._user, entry_value)
-        print("username changed to", entry_value)
+        self._service.remove_all_stickers(self._user)
+        print("all stickers removed")
 
     def _handle_userbutton_click(self):
         entry_value = self._username_entry.get()
@@ -45,7 +43,7 @@ class SettingsView:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        label = ttk.Label(master=self._frame, text="this is the settings")
+        label = ttk.Label(master=self._frame, text="SETTINGS")
 
         back_button = ttk.Button(
             master=self._frame,
@@ -84,9 +82,15 @@ class SettingsView:
             text="Change",
             command=lambda: self._handle_actionbutton_click(3)
         )
+        # Remove all
+        remove_button = ttk.Button(
+            master=self._frame,
+            text="Remove all Stickers",
+            command=lambda: self._handle_removebutton_click()
+        )
 
-        label.grid(row=0, column=0)
-        back_button.grid(row=1, column=0)
+        label.grid(row=0, column=1)
+        back_button.grid(row=9, column=1)
 
         username_label.grid(row=2, column=0)
         self._username_entry.grid(row=2, column=1)
@@ -103,3 +107,5 @@ class SettingsView:
         action3_label.grid(row=7, column=0)
         self._action3_entry.grid(row=7, column=1)
         action3_button.grid(row=7, column=2)
+
+        remove_button.grid(row=8, column=1)

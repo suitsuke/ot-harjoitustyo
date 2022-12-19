@@ -138,3 +138,14 @@ class TestStickersRepository(unittest.TestCase):
 
     def test_find_username(self):
         self.assertEqual(self.service.find_username(1), "user1")
+
+    def test_remove_all_stickers(self):
+        # add all stickers
+        for i in range(1, self.stickers_amount+1):
+            self.service.add_random_sticker(3)
+
+        self.assertEqual(self.service.total_stickers_by_user(3), [
+                         1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+
+        self.service.remove_all_stickers(3)
+        self.assertEqual(self.service.total_stickers_by_user(3), [])

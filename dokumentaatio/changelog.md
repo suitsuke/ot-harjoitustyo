@@ -48,7 +48,7 @@
 
 
 ## Viikko 7
-- todo: ehkä tarrahistorian katselmointi
+- lisätty remove all stickers -button asetuksiin
 - todo: käyttöliittymän siistiminen
     - ilmoitus kun käyttäjätunnus/toiminto on muutettu ja tekstiruudun tyhjennys
 - todo: collection-näkymässä tarran hoverointi näyttää tarran tekstin
@@ -57,3 +57,4 @@
 - todo: python libraries used
 - todo: collection screen: jos tarroja = 0: display label "no stickers yet"
 - todo: testausdokumentti
+- todo: testaus cubblilla

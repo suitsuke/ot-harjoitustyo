@@ -34,12 +34,16 @@ class MenuView:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
+        self._frame.rowconfigure(0, weight=1)
+        self._frame.rowconfigure(1, weight=8)
+        self._frame.rowconfigure(2, weight=1)
+
         label = ttk.Label(master=self._frame,
-                          text=f"this is the main menu for user {self.user}")
+                          text=f"Hello, {self.user}!")
 
         button1 = ttk.Button(
             master=self._frame,
-            text="Back to login",
+            text="Back",
             command=self._handle_login
         )
 
@@ -56,7 +60,7 @@ class MenuView:
         )
         button_a1 = ttk.Button(
             master=self._frame,
-            text=self.service.find_action(self.user, 1),
+            text=self.service.find_action(self.user, 1), 
             command=lambda: self._handle_button_click(1)
         )
         button_a2 = ttk.Button(
@@ -70,11 +74,11 @@ class MenuView:
             command=lambda: self._handle_button_click(3)
         )
 
-        label.grid(row=0, column=0)
-        button1.grid(row=3, column=1)  # login
+        label.grid(row=0, column=1)
+        button1.grid(row=2, column=2)  # login/back
         button2.grid(row=2, column=0)  # collection
         button3.grid(row=2, column=1)  # settings
 
-        button_a1.grid(row=1, column=0)
+        button_a1.grid(row=1, column=0, ipady=10, padx=5, pady=5, sticky="ns")
         button_a2.grid(row=1, column=1)
-        button_a3.grid(row=1, column=3)
+        button_a3.grid(row=1, column=2)

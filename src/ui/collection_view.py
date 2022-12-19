@@ -19,12 +19,11 @@ class CollectionView:
     def destroy(self):
         self._frame.destroy()
 
-    #def display_description(self, id:int):
+    # def display_description(self, id:int):
     #    description = ttk.Label(master=self._frame, text=f"___Sticker-description for {id}")
     #    description.grid(row=6, column=2)
-        
-    
-    #def display_empty(self):
+
+    # def display_empty(self):
     #    description = ttk.Label(master=self._frame, text=f"Hover over a sticker!")
     #    description.grid(row=6, column=2)
 
@@ -52,11 +51,11 @@ class CollectionView:
             label1 = ttk.Label(self._frame, image=photo1)
             label1.image = photo1
             label1.grid(row=2, column=1)
-            #hovering with balloon
-            #tip1=Balloon(self._root)
+            # hovering with balloon
+            # tip1=Balloon(self._root)
             #tip1.bind_widget(label1,balloonmsg="image 1")
-            
-            #hovering
+
+            # hovering
             #label1.bind("<Enter>", self.display_description(1))
             #label1.bind("<Leave>", self.display_description(1))
 

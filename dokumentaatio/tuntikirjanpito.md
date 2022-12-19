@@ -20,6 +20,6 @@
 | 9.12. | 2  | käyttäjäasetusten aloitus: change&find action, change&find username, + graafinen ui|
 | 12.12. | 1.5  | käyttöliittymä osaa hakea käyttäjän asettamat tiedot nappuloihin, testaus cubblilla|
 | 15.12. | 1  | tiedon etsiminen + kokeilu tooltipin-muodostamisesta tkinterillä|
+| 19.12. | 1  | käyttöliittymän modaaminen, remove-all-stickers-toiminto|
 | .12. | x  | .|
-| .12. | x  | .|
-| Summa | 31  | tuntia|
+| Summa | 32  | tuntia|
