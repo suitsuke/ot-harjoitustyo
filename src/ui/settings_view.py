@@ -21,6 +21,12 @@ class SettingsView:
     def destroy(self):
         self._frame.destroy()
 
+    def _handle_removebutton_click(self):
+        #todo
+        entry_value = self._username_entry.get()
+        self._service.change_username(self._user, entry_value)
+        print("username changed to", entry_value)
+
     def _handle_userbutton_click(self):
         entry_value = self._username_entry.get()
         self._service.change_username(self._user, entry_value)

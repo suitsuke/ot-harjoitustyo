@@ -1,6 +1,7 @@
 from tkinter import ttk, constants, PhotoImage
 from PIL import Image, ImageTk
 from services.stickerservice import StickerService
+#from tkinter.tix import Balloon
 
 
 class CollectionView:
@@ -17,6 +18,15 @@ class CollectionView:
 
     def destroy(self):
         self._frame.destroy()
+
+    #def display_description(self, id:int):
+    #    description = ttk.Label(master=self._frame, text=f"___Sticker-description for {id}")
+    #    description.grid(row=6, column=2)
+        
+    
+    #def display_empty(self):
+    #    description = ttk.Label(master=self._frame, text=f"Hover over a sticker!")
+    #    description.grid(row=6, column=2)
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
@@ -42,6 +52,13 @@ class CollectionView:
             label1 = ttk.Label(self._frame, image=photo1)
             label1.image = photo1
             label1.grid(row=2, column=1)
+            #hovering with balloon
+            #tip1=Balloon(self._root)
+            #tip1.bind_widget(label1,balloonmsg="image 1")
+            
+            #hovering
+            #label1.bind("<Enter>", self.display_description(1))
+            #label1.bind("<Leave>", self.display_description(1))
 
         if 2 in owned_images:
             image2 = Image.open("data/images/2.png")
