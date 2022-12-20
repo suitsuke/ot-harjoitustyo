@@ -51,6 +51,7 @@ class SettingsView:
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         label = ttk.Label(master=self._frame, text="Settings")
+        label2 = ttk.Label(master=self._frame, text="Change your actions or username. Max. length 15 characters.")
 
         back_button = ttk.Button(
             master=self._frame,
@@ -97,6 +98,7 @@ class SettingsView:
         )
 
         label.grid(row=0, column=1, pady=10)
+        label2.grid(row=1, column=0, pady=10, columnspan=3, padx=5)
         back_button.grid(row=9, column=1, pady=(0,10))
 
         username_label.grid(row=2, column=0, padx=(5,0))
