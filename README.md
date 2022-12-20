@@ -14,7 +14,7 @@ Sovellus on kehitetty harjoitustyöksi Helsingin yliopiston Ohjelmistotekniikan 
 - [Käyttöohje](dokumentaatio/kayttoohje.md)
 - [Vaatimusmäärittely](dokumentaatio/vaatimusmaarittely.md)
 - [Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuuri.md)
-- Testausdokumentti (tulossa)
+- [Testausdokumentti](dokumentaatio/testaus.md)
 - [Työaikakirjanpito](dokumentaatio/tuntikirjanpito.md)
 - [Changelog](dokumentaatio/changelog.md)
 
@@ -45,6 +45,7 @@ poetry run invoke start
 ### Testaus
 
 Testit saat kommennolla:
+Huom! Testaaminen tyhjentää ja alustaa ohjelman oletusasetuksiin.
 
 ```bash
 poetry run invoke test
@@ -66,3 +67,9 @@ poetry run invoke coverage-report
 ```
 
 Raportti generoidaan kansioon _htmlcov_.
+
+### Pylint
+Pylintin tulosteen saat komennolla
+```bash
+poetry run invoke pylint
+```
