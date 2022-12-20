@@ -36,11 +36,13 @@ jokaisella käyttäjällä on eri historia ja tarrakokoelma.
 
 ## Jatkokehitysideoita
 
+- Collection-näkymässä tarran hoverointi näyttää tarran tekstikuvailun
 - Enemmän tarroja
 - Kirjautumiseen voidaan asettaa salasana tai haastava kertolasku
-- Käyttäjiä enemmän (esim. 5)
+- Käyttäjiä enemmän
 - Tarrojen luokittelu eri askareiden mukaan niin että tietyntyyppiset askareet suosivat 
 tietyn tyyppisiä tarroja
+- Tarrojen painoitettu todennäköisyys ja random-testaaminen
 - Samaa tarraa voi kerätä monta kappaletta ja se esitetään käyttäjälle kokoelmassa
 - Tarrojen vaihtaminen käyttäjien välillä
 - Tilastojen ja historian luominen askareista ja suoritusajoista

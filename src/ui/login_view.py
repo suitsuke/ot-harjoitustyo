@@ -15,7 +15,7 @@ class LoginView:
     def change_user(self, user):
         self._change_user(user)
         self._handle_menu()
-        print("user changed")
+        print(f"User {self._service.find_username(user)} logged in.")
 
     def pack(self):
         self._frame.pack(fill=constants.X)

@@ -16,15 +16,18 @@ class MenuView:
 
     def _handle_button_click(self, button_value):
         if button_value == 1:
-            # add sticker
             added_sticker = self.service.add_random_sticker(self.user)
-            print("sticker", added_sticker, "added to user", self.user)
+            #print("sticker", added_sticker, "added to user", self.user)
         elif button_value == 2:
             added_sticker = self.service.add_random_sticker(self.user)
-            print("sticker", added_sticker, "added to user", self.user)
+            #print("sticker", added_sticker, "added to user", self.user)
         elif button_value == 3:
             added_sticker = self.service.add_random_sticker(self.user)
-            print("sticker", added_sticker, "added to user", self.user)
+            #print("sticker", added_sticker, "added to user", self.user)
+        if added_sticker == -1:
+            print("You have collected all stickers!")
+        else:
+            print("Sticker", added_sticker, "added to user", self.service.find_username(self.user))
 
     def pack(self):
         self._frame.pack(fill=constants.X)
@@ -39,7 +42,7 @@ class MenuView:
         self._frame.rowconfigure(2, weight=1)
 
         label = ttk.Label(master=self._frame,
-                          text=f"Hello, {self.user}!")
+                          text=f"Hello, {self.service.find_username(self.user)}!")
 
         button1 = ttk.Button(
             master=self._frame,

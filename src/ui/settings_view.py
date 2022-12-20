@@ -23,12 +23,15 @@ class SettingsView:
 
     def _handle_removebutton_click(self):
         self._service.remove_all_stickers(self._user)
-        print("all stickers removed")
+        print("All stickers removed!")
 
     def _handle_userbutton_click(self):
         entry_value = self._username_entry.get()
+        if len(entry_value) >15:
+            print("Maximum length 15 characters.")
+            return
         self._service.change_username(self._user, entry_value)
-        print("username changed to", entry_value)
+        print("Username changed to", entry_value)
 
     def _handle_actionbutton_click(self, number: int):
         if number == 1:
@@ -96,20 +99,20 @@ class SettingsView:
         label.grid(row=0, column=1, pady=10)
         back_button.grid(row=9, column=1, pady=(0,10))
 
-        username_label.grid(row=2, column=0, padx=5)
+        username_label.grid(row=2, column=0, padx=(5,0))
         self._username_entry.grid(row=2, column=1)
-        username_button.grid(row=2, column=2, padx=5)
+        username_button.grid(row=2, column=2, padx=(0,5))
 
-        action1_label.grid(row=5, column=0, padx=5)
+        action1_label.grid(row=5, column=0, padx=(5,0))
         self._action1_entry.grid(row=5, column=1)
-        action1_button.grid(row=5, column=2, padx=5)
+        action1_button.grid(row=5, column=2, padx=(0,5))
 
         action2_label.grid(row=6, column=0, padx=5)
         self._action2_entry.grid(row=6, column=1)
-        action2_button.grid(row=6, column=2, padx=5)
+        action2_button.grid(row=6, column=2, padx=(0,5))
 
         action3_label.grid(row=7, column=0, padx=5)
         self._action3_entry.grid(row=7, column=1)
-        action3_button.grid(row=7, column=2, padx=5)
+        action3_button.grid(row=7, column=2, padx=(0,5))
 
         remove_button.grid(row=8, column=1, pady=5)

@@ -46,15 +46,13 @@
 - dokumentaatiota lisätty sekä koodiin että omille sivuille
 - testaus cubblilla
 
-
 ## Viikko 7
 - lisätty remove all stickers -button asetuksiin
-- todo: käyttöliittymän siistiminen
-    - ilmoitus kun käyttäjätunnus/toiminto on muutettu ja tekstiruudun tyhjennys
-- todo: collection-näkymässä tarran hoverointi näyttää tarran tekstin
-- todo: random-testaaminen?
+- käyttöliittymää siistitty paljon
+- jos tarraa ei omisteta, näkyy tyhjä ympyrä sen kohdalla
+- korjattu käyttäjänimen ja action-painikkeen pituusrajoitus ja ilmoitukset
+- todo: collection screen: jos tarroja = 0: display label "no stickers yet"
 - todo: arkkitehtuuri-sivulla uuden rakennekaavion piirto
 - todo: python libraries used
-- todo: collection screen: jos tarroja = 0: display label "no stickers yet"
 - todo: testausdokumentti
 - todo: testaus cubblilla
