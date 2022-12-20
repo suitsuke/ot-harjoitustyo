@@ -2,7 +2,7 @@
 
 ## Rakenne
 
-![rakenne](arkkitehtuuri2.png)
+![rakenne](kuvat/arkkitehtuuri2.png)
 
 Ohjelmassa ui hoitaa käyttöliittymän ja kutsuu sitten servicen kautta ohjelman toimintoja. Services kutsuu Repositories-hakemistoa etsimään ja hakemaan ja käsittelemään tietoa tietokannoista.
 
