@@ -21,5 +21,5 @@
 | 12.12. | 1.5  | käyttöliittymä osaa hakea käyttäjän asettamat tiedot nappuloihin, testaus cubblilla|
 | 15.12. | 1  | tiedon etsiminen + kokeilu tooltipin-muodostamisesta tkinterillä|
 | 19.12. | 1  | käyttöliittymän säätäminen, remove-all-stickers-toiminto|
-| 20.12. | 2  | käyttöliittymän siistiminen, syötettyjen tekstien pituuden rajoitus|
-| Summa | 35  | tuntia|
+| 20.12. | 2.5  | käyttöliittymän siistiminen, syötettyjen tekstien pituuden rajoitus|
+| Summa | 35.5  | tuntia|
