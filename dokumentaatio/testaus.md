@@ -14,7 +14,7 @@ StickersRepository vastaa tiedon hausta ja muokkaamisesta tietokannoista. Tietok
 
 ### Testikattavuus
 Haarautumakattavuus on 96% lukuun ottamatta käyttöliittymää.
-![](testikattavuus.png)
+![](kuvat/testikattavuus.png)
 Testaamatta jäi toiminnon muuttamisen testaaminen kolmannelle toiminnolle, joka toimii täysin samoin kuin ensimmäiselle kahdelle. Lisäksi käyttäjätunnuksen muuttaminen jos syöte on liian pitkä jäi testaamatta.
 
 ## Järjestelmä- ja käyttöliittymätestaus
