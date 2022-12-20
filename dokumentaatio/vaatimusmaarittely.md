@@ -14,7 +14,7 @@ jokaisella käyttäjällä on eri historia ja tarrakokoelma.
 
 ## Käyttöliittymä
 
-![image](kayttoliittyma.jpeg)
+![image](kuvat/kayttoliittyma.jpeg)
 
 ## Perusversion toiminnallisuus
 
