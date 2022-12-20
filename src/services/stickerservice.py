@@ -105,7 +105,7 @@ class StickerService:
             self.remove_sticker(user, i)
 
     def change_username(self, user_id: int, username: str):
-        """Pyytää repositoryä vaihtamaan käyttäjänimen. Sallittu pituus 1-30 merkkiä.
+        """Pyytää repositoryä vaihtamaan käyttäjänimen. Sallittu pituus 1-15 merkkiä.
 
         Args:
             user_id (int): käyttäjä-id int-muodossa
@@ -113,7 +113,7 @@ class StickerService:
         Returns:
             int: 1 if successful, -1 if not
         """
-        if len(username) > 30 or len(username) == 0:
+        if len(username) > 15 or len(username) == 0:
             return -1
         self.repository.change_username(user_id, username)
         return 1

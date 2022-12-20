@@ -7,15 +7,15 @@ def main():
     """
     window = Tk()
     window.title("Stickers")
-    window_width = 450
-    window_height = 250
+    #window_width = 350
+    #window_height = 250
     screen_wid = window.winfo_screenwidth()
     screen_hei = window.winfo_screenheight()
-    center_x = int(screen_wid/2-window_width/2)
-    center_y = int(screen_hei/2-window_height/2)
-    # window.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
-    window.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
-
+    #center_x = int(screen_wid/2-window_width/2)
+    #center_y = int(screen_hei/2-window_height/2)
+    #window.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
+    #window.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
+    window.eval('tk::PlaceWindow . center')
     ui_view = UI(window)
     ui_view.start()
 

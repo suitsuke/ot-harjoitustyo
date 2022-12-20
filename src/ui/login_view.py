@@ -25,7 +25,7 @@ class LoginView:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        label = ttk.Label(master=self._frame, text="This is the login screen")
+        label = ttk.Label(master=self._frame, text="Choose a user")
 
         user1_button = ttk.Button(
             master=self._frame,
@@ -43,7 +43,7 @@ class LoginView:
             command=lambda: self.change_user(3)
         )
 
-        label.grid(row=0, column=0)
-        user1_button.grid(row=1, column=0)
-        user2_button.grid(row=1, column=1)
-        user3_button.grid(row=1, column=2)
+        label.grid(row=0, column=1, pady=10)
+        user1_button.grid(row=1, column=0, padx=10, pady=(10,20))
+        user2_button.grid(row=1, column=1, padx = 10,pady=(10,20))
+        user3_button.grid(row=1, column=2, padx=10, pady=(10,20))

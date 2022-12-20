@@ -30,7 +30,7 @@ class CollectionView:
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         #text and buttons
-        label = ttk.Label(master=self._frame, text=f"Stickers")
+        label = ttk.Label(master=self._frame, text=f"Your Stickers")
 
         button = ttk.Button(
             master=self._frame,
@@ -38,8 +38,8 @@ class CollectionView:
             command=self._handle_menu
         )
 
-        label.grid(row=0, column=0)
-        button.grid(row=5, column=6)
+        label.grid(row=0, column=2, padx=5, pady=(15,0), sticky="e", columnspan=2)
+        button.grid(row=5, column=2, padx=5, sticky="e", columnspan=2, pady=20)
 
         # images
         owned_images = self._service.total_stickers_by_user(self._user)
@@ -50,35 +50,28 @@ class CollectionView:
             photo1 = ImageTk.PhotoImage(image1)
             label1 = ttk.Label(self._frame, image=photo1)
             label1.image = photo1
-            label1.grid(row=2, column=1)
-            # hovering with balloon
-            # tip1=Balloon(self._root)
-            #tip1.bind_widget(label1,balloonmsg="image 1")
-
-            # hovering
-            #label1.bind("<Enter>", self.display_description(1))
-            #label1.bind("<Leave>", self.display_description(1))
+            label1.grid(row=2, column=1, sticky="e",padx=(30,0), pady=(20,0))
 
         if 2 in owned_images:
             image2 = Image.open("data/images/2.png")
             photo2 = ImageTk.PhotoImage(image2)
             label2 = ttk.Label(self._frame, image=photo2)
             label2.image = photo2
-            label2.grid(row=2, column=2)
+            label2.grid(row=2, column=2, pady=(20,0))
 
         if 3 in owned_images:
             image3 = Image.open("data/images/3.png")
             photo3 = ImageTk.PhotoImage(image3)
             label3 = ttk.Label(self._frame, image=photo3)
             label3.image = photo3
-            label3.grid(row=2, column=3)
+            label3.grid(row=2, column=3, pady=(20,0))
 
         if 4 in owned_images:
             image4 = Image.open("data/images/4.png")
             photo4 = ImageTk.PhotoImage(image4)
             label4 = ttk.Label(self._frame, image=photo4)
             label4.image = photo4
-            label4.grid(row=2, column=4)
+            label4.grid(row=2, column=4, padx=(0,30), pady=(20,0))
 
         # row2
         if 5 in owned_images:
@@ -86,7 +79,7 @@ class CollectionView:
             photo5 = ImageTk.PhotoImage(image5)
             label5 = ttk.Label(self._frame, image=photo5)
             label5.image = photo5
-            label5.grid(row=3, column=1)
+            label5.grid(row=3, column=1, padx=(30,0), sticky="e")
 
         if 6 in owned_images:
             image6 = Image.open("data/images/6.png")
@@ -107,7 +100,7 @@ class CollectionView:
             photo8 = ImageTk.PhotoImage(image8)
             label8 = ttk.Label(self._frame, image=photo8)
             label8.image = photo8
-            label8.grid(row=3, column=4)
+            label8.grid(row=3, column=4, padx=(0,30))
 
         # row3
         if 9 in owned_images:
@@ -115,7 +108,7 @@ class CollectionView:
             photo9 = ImageTk.PhotoImage(image9)
             label9 = ttk.Label(self._frame, image=photo9)
             label9.image = photo9
-            label9.grid(row=4, column=1)
+            label9.grid(row=4, column=1, padx=(30,0), sticky="e")
 
         if 10 in owned_images:
             image10 = Image.open("data/images/10.png")
@@ -136,4 +129,4 @@ class CollectionView:
             photo12 = ImageTk.PhotoImage(image12)
             label12 = ttk.Label(self._frame, image=photo12)
             label12.image = photo12
-            label12.grid(row=4, column=4)
+            label12.grid(row=4, column=4, padx=(0,30))

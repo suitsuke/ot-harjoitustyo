@@ -74,11 +74,11 @@ class MenuView:
             command=lambda: self._handle_button_click(3)
         )
 
-        label.grid(row=0, column=1)
-        button1.grid(row=2, column=2)  # login/back
-        button2.grid(row=2, column=0)  # collection
-        button3.grid(row=2, column=1)  # settings
+        label.grid(row=0, column=1, pady=10)
+        button1.grid(row=2, column=2,padx=10, pady=10, sticky="nsew")  # login/back
+        button2.grid(row=2, column=0, padx=10, pady=10, sticky="nsew")  # collection
+        button3.grid(row=2, column=1,padx=10, pady=10, sticky="nsew")  # settings
 
-        button_a1.grid(row=1, column=0, ipady=10, padx=5, pady=5, sticky="ns")
-        button_a2.grid(row=1, column=1)
-        button_a3.grid(row=1, column=2)
+        button_a1.grid(row=1, column=0, padx=10, pady=5)
+        button_a2.grid(row=1, column=1, padx=10, pady=5)
+        button_a3.grid(row=1, column=2, padx=10, pady=5)
