@@ -27,7 +27,7 @@ poetry update
 
 ### Kirjautumisnäkymä
 
-Ohjelma avautuu kirjautumisnäkymään. Valitse käyttäjätunnus jota käytät, käyttäjätunnuksia on 1, 2 ja 3.
+Ohjelma avautuu kirjautumisnäkymään. Valitse käyttäjätunnus jota käytät, käyttäjätunnuksia on 3 kappaletta. Voit vaihtaa käyttäjänimesi seuraavasta valikosta Settings-nappia painamalla.
 
 ### Päävalikko
 
