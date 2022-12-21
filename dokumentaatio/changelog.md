@@ -55,4 +55,6 @@
 - arkkitehtuuri päivitetty ja lisätty uusi rakennekaavio ja muutama sekvenssikaavio
 - todo: collection screen: jos tarroja = 0: display label "no stickers yet"
 - todo: python libraries used
+- todo: tietokantojen alustus ennen releasea
+- todo: lisää docstringia?
 - todo: testaus cubblilla
