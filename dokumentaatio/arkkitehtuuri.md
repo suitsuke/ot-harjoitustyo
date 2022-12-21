@@ -83,6 +83,7 @@ Nämä ovat oletusnimet ja oletustoiminnot jotka näkyvät kun ohjelma käynnist
 ## Päätoiminnallisuudet
 
 ### Tarran lisääminen
+Kun käyttäjä painaa toiminto-nappia, etenee tarran lisäys seuraavasti:
 
 ```mermaid
 sequenceDiagram
@@ -106,6 +107,8 @@ sequenceDiagram
     
     deactivate ui
 ```
+Painikkeeseen reagoi tapahtumakäsittelijä käyttöliittymässä joka kutsuu StickerServiceä, joka valitsee satunnaisesti puuttuvan tarran. StickerService kutsuu StickersRepositoryä lisäämään valitun tarran käyttäjälle muokkaamalla tietokantaa, jonka jälkeen se palauttaa ja varmistaa että tarra oikeasti lisättiin hakemalla tiedon lisätystä tarrasta tietokannasta. 
+
 ### Kokoelman avaaminen
 
 ```mermaid
