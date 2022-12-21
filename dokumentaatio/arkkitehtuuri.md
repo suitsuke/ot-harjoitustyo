@@ -2,18 +2,18 @@
 
 ## Rakenne
 
-![rakenne](kuvat/arkkitehtuuri2.png)
+![rakenne](kuvat/rakenne.png)
 
-Ohjelmassa ui hoitaa käyttöliittymän ja kutsuu sitten servicen kautta ohjelman toimintoja. Services kutsuu Repositories-hakemistoa etsimään ja hakemaan ja käsittelemään tietoa tietokannoista.
+Ohjelmassa ui hoitaa käyttöliittymän ja kutsuu sitten serviceä joka huolehtii sovelluslogiikasta. Services kutsuu Repositoriesia kun haetaan tai tallennetaan tietoa tietokantoihin. Kaikki data löytyy data-kansiosta, mukaanlukien tietokannat ja kuvat.
 
 ## Käyttöliittymä
-Käyttöliittymä sisältää neljä eri näkymää.
-Ohjelma avautuu kirjautumisnäkymästä (login_view), josta voidaan valita käyttäjä. Valitsemalla käyttäjän siirrytään menu-näkymään (menu_view), josta päästään kaikkii muihin valikkoihin.
-- Toiminto-napit lisäävät satunnaisen tarran käyttäjälle joka on tällä hetkellä valittuna.
-- Collection-nappi siirtää kokoelma-näkymään (collection_view) jossa näkyy kerätyt tarrat kyseiselle käyttäjälle.
-- Settings-nappi vie asetusnäkymään (settings_view), josta käyttäjä voi asettaa tämän käyttäjän asetuksia.
- 
-Käyttöliittymän napit kutsuvat services-luokan metodeja ja on eristetty muuten sovelluslogiikasta.
+Käyttöliittymä on graafinen sisältää neljä eri näkymää:
+- Kirjautumisnäkymä (login_view)
+- Päävalikko (menu_view)
+- Asetukset (settings_view)
+- Kokoelma (collection_view)
+
+Jokainen näkymä on oma luokkansa ja näkymistä näkyy vain yksi kerrallaan. UI-luokka vastaa eri näkymien näyttämisestä ja edellisten sulkemisesta. Käyttöliittymä kutsuu StickerService-luokan metodeja ja on muuten pääosin eristetty sovelluslogiikasta.
 
 ## Sovelluslogiikka
 
@@ -23,12 +23,48 @@ graph TD;
     services --> repositories;
     repositories --> data;
 ```
+Sovelluksen logiikka pohjautuu TodoServiceen joka vastaa ohjelman toiminnallisuudesta. Käyttäjän tiedot ja asetukset löytyvät tietokannasta, ja ne haetaan aina tarvittaessa kun ohjelma kutsuu niitä StickerServicellä, joka kutsuu StickersRepositoryä. StickerServicellä on jokaiselle toiminnolle oma metodi, esimerkiksi:
+- add_random_sticker
+- remove_sticker
+- change_action
+- find_username
+- find_action
+
+StickerService kutsuu useimmilla metodeilla StickersRepositoryä hakemaan tiedon tietokannasta userstickers.db tai stickers.db. StickersRepositoryllä on metodit useimmille toiminnoille, esimerkiksi:
+- add_sticker
+- remove_sticker
+- change_username
+- change_action
+- find_action
 
 
-## Tietojen tallennus
 
-Sovellus ei muokkaa tietokantaa stickers.db ollenkaan, vaan pelkästään lukee sen tietoja. Tietokantaa userstickers.db muokataan, ja se pitää huolta siitä, mitä tarroja kullakin käyttäjällä on. Se vastaa pysyväistallennuksesta, ja säilyttää tiedot myös jos ohjelma suljetaan.
-Huomioi, että testien ajo tyhjentää userstickers.db ja alustaa sen tyhjäksi merkinnällä (0,0), eli käyttäjällä 0 on tarra numero 0.
+## Tietojen pysyväistallennus ja tietokannat
+
+Sovellus ei muokkaa tietokantaa stickers.db ollenkaan, vaan pelkästään lukee sen tietoja. Tietokantaa userstickers.db muokataan, ja se pitää huolta siitä, mitä tarroja kullakin käyttäjällä on.  Tietokannassa userstickers.db on kaksi taulua: Users ja UserStickers. Users sisältää käyttäjän tiedot sqlite-tietokantana muodossa
+
+(user_id INTEGER, name TEXT, action1 TEXT, action2 TEXT, action3 TEXT)
+
+ja UserStickers puolestaan sisältää tiedon mitä tarroja kullakin käyttäjällä on muodossa
+
+(user_id INTEGER REFERENCES Users, sticker_id INTEGER REFERENCES Stickers)
+
+StickersRepository vastaa pysyväistallennuksesta, ja säilyttää tiedot myös jos ohjelma suljetaan. Kaikki tiedon muokkaukset muuttavat ja tallentuvat suoraan pysyväistallennuksena tietokantaan.
+
+Viimeinen erillinen tietokanta on stickers.db-tiedostossa, jota ohjelma ei muokkaa ollenkaan vaan pelkästään lukee sen tietoja. Tietokannassa on tarrojen id:t sekä niiden kuvailut muodossa 
+
+(id INTEGER, name TEXT, description TEXT)
+
+Huomioi, että testien ajo tyhjentää userstickers.db ja alustaa sen oletusmuotoon. UserStickers-taulu on kokonaan tyhjä poislukien arvoparin (0,0), ja Users-taulukkoon alustetaan seuraava:
+
+| user_id | name | action1  |action2  |action3  |
+| :----:|:-----| :-----|:-----|:-----|
+| 1 | user1    | action1 |action2 |action3 |
+| 2 | user2    | action1 |action2 |action3 |
+| 3 | user3    | action1 |action2 |action3 |
+
+Nämä ovat oletusnimet ja oletustoiminnot jotka näkyvät kun ohjelma käynnistetään eikä käyttäjä ole vielä lisännyt tai muokannut itselleen sopivia toimintoja suoritettavaksi.
+
 
 ## Päätoiminnallisuudet
 
