@@ -108,7 +108,34 @@ sequenceDiagram
 ```
 ### Kokoelman avaaminen
 
-(TODO)
+```mermaid
+sequenceDiagram
+	participant ui
+	participant CollectionView
+	participant StickerService
+	participant StickersRepository
+	
+    activate ui
+    ui->>CollectionView:(user interaction)
+    activate CollectionView
+    CollectionView->>StickerService:total_stickers_by_user(1)
+    activate StickerService
+    StickerService->>StickersRepository:find_all_by_user(1)
+    activate StickersRepository
+    participant data
+    activate data
+    StickersRepository->>data:SELECT
+    data->>StickersRepository:(list)
+    deactivate data
+    StickersRepository->>StickerService:sorted_list
+    deactivate StickersRepository
+    StickerService->>CollectionView:sticker_list
+    deactivate StickerService
+    data->>CollectionView:(images)
+    deactivate CollectionView
+    
+```    
+    
 
 ### Käyttäjän asetusten vaihto
 
