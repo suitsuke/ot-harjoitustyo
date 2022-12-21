@@ -146,15 +146,26 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
-	participant user
+	participant user1
 	participant SettingsView
 	participant StickerService
 	participant StickersRepository
 	
-    activate user
-    user->>SettingsView:(user writes & clicks 'Change')
-    deactivate user
+    activate user1
+    user->>SettingsView:(user1 writes & clicks 'Change')
+    deactivate user1
     activate SettingsView
+    SettingsView->>SettingsView:_handle_userbutton_click()
+    SettingsView->>StickerService:change_username(1, entry_value)
+    activate StickerService
+    StickerService->>StickersRepository:change_username(1, entry_value)
+    activate StickersRepository
+    participant userstickers.db
+    StickersRepository->>userstickers.db:UPDATE
+    StickersRepository->>StickerService:1
+    deactivate StickersRepository
+    deactivate StickerService
+    deactivate SettingsView
     
     
 ```
