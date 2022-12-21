@@ -52,7 +52,6 @@
 - jos tarraa ei omisteta, näkyy tyhjä ympyrä sen kohdalla
 - korjattu käyttäjänimen ja action-painikkeen pituusrajoitus ja ilmoitukset
 - testausdokumentti, käyttöohje kirjoitettu
-
 - todo: collection screen: jos tarroja = 0: display label "no stickers yet"
 - todo: arkkitehtuuri-sivulla uuden rakennekaavion piirto
 - todo: python libraries used
