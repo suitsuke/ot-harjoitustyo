@@ -17,12 +17,26 @@ Jokainen näkymä on oma luokkansa ja näkymistä näkyy vain yksi kerrallaan. U
 
 ## Sovelluslogiikka
 
+Ohjelmaa käytetään graafisen käyttöliittymän kautta joka kutsuu StickerServiceä hoitamaan toimintoja. Kun valitaan käyttäjä, käyttöliittymä pitää huolen siitä, mikä käyttäjä on juuri nyt valittuna käyttöliittymän näkymä-oliossa, ja osaa kutsua StickerServiceä oikealle käyttäjälle.
+
 ```mermaid
-graph TD;
-    ui --> services;
-    services --> repositories;
-    repositories --> data;
+ classDiagram
+      UI "1" --> "1" StickerService
+      class UI{
+          user
+          ...
+      }
+      class StickerService{
+          db_stickers
+          db_userstickers
+      }
+      StickerService "1" --> "1" StickersRepository
+      class StickersRepository{
+          db
+          ...
+      }
 ```
+
 Sovelluksen logiikka pohjautuu TodoServiceen joka vastaa ohjelman toiminnallisuudesta. Käyttäjän tiedot ja asetukset löytyvät tietokannasta, ja ne haetaan aina tarvittaessa kun ohjelma kutsuu niitä StickerServicellä, joka kutsuu StickersRepositoryä. StickerServicellä on jokaiselle toiminnolle oma metodi, esimerkiksi:
 - add_random_sticker
 - remove_sticker
