@@ -57,4 +57,5 @@
 - todo: python libraries used
 - todo: tietokantojen alustus ennen releasea
 - todo: lisää docstringia?
+- todo:readme
 - todo: testaus cubblilla
