@@ -144,6 +144,8 @@ sequenceDiagram
 
 ### Käyttäjän asetusten vaihto
 
+Käyttäjä avaa SettingsView-valikon ja kirjoittaa Change username -ikkunaan uuden käyttäjätunnuksen. Tämän jälkeen hän painaa Change-nappia. Käyttöliittymä lukee entry-ikkunan sisällön ja kutsuu sitten Serviceä, joka kutsuu puolestaan Repositoryä, joka muokkaa tietokannasta kyseisen käyttäjän nimen uudeksi.
+
 ```mermaid
 sequenceDiagram
 	participant user1
@@ -152,7 +154,7 @@ sequenceDiagram
 	participant StickersRepository
 	
     activate user1
-    user->>SettingsView:(user1 writes & clicks 'Change')
+    user1->>SettingsView:(user1 writes & clicks 'Change')
     deactivate user1
     activate SettingsView
     SettingsView->>SettingsView:_handle_userbutton_click()
