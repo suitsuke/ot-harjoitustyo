@@ -111,6 +111,8 @@ Painikkeeseen reagoi tapahtumakäsittelijä käyttöliittymässä joka kutsuu St
 
 ### Kokoelman avaaminen
 
+Käyttäjä painaa Collection-nappia, joka avaa CollectionView-näkymän. Tämän jälkeen CollectionView kutsuu StickerServiceä etsimään tiedot omistetuista tarroista, jotta näkymä voi renderöidä oikeat kuvat kun näkymä avataan.
+
 ```mermaid
 sequenceDiagram
 	participant ui
@@ -142,7 +144,20 @@ sequenceDiagram
 
 ### Käyttäjän asetusten vaihto
 
-(TODO)
+```mermaid
+sequenceDiagram
+	participant user
+	participant SettingsView
+	participant StickerService
+	participant StickersRepository
+	
+    activate user
+    user->>SettingsView:(user writes & clicks 'Change')
+    deactivate user
+    activate SettingsView
+    
+    
+```
 
 ### Muut toiminnallisuudet
 Käyttäjä painaa käyttöliittymän nappeja, käyttöliittymä kutsuu Services-oliota, joka kutsuu repositoryä joka huolehtii toiminnan toteuttamisesta.
