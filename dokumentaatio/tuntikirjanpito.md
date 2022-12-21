@@ -22,4 +22,5 @@
 | 15.12. | 1  | tiedon etsiminen + kokeilu tooltipin-muodostamisesta tkinterillä|
 | 19.12. | 1  | käyttöliittymän säätäminen, remove-all-stickers-toiminto|
 | 20.12. | 2.5  | käyttöliittymän siistiminen, syötettyjen tekstien pituuden rajoitus, dokumentaatiota|
-| Summa | 35.5  | tuntia|
+| 21.12. | 2  | dokumentaatiota (arkkitehtuuri, sekvenssikaavioita, pakkausrakenne)|
+| Summa | 37.5  | tuntia|
