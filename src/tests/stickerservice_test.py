@@ -68,7 +68,6 @@ class TestStickersRepository(unittest.TestCase):
         self.assertEqual(
             len(self.service.total_stickers_by_user(1)), 1)  # testattava
 
-
     def test_add_specific_sticker(self):
         self.assertEqual(self.service.add_specific_sticker(1, 1), (1, 1))
         self.assertEqual(self.service.add_specific_sticker(1, 1), -1)

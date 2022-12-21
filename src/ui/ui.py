@@ -4,7 +4,7 @@ from ui.login_view import LoginView
 from ui.menu_view import MenuView
 from ui.settings_view import SettingsView
 from services.stickerservice import StickerService
-from tkinter.tix import *
+
 
 
 class UI:

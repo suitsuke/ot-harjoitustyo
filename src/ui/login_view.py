@@ -44,6 +44,6 @@ class LoginView:
         )
 
         label.grid(row=0, column=1, pady=10)
-        user1_button.grid(row=1, column=0, padx=10, pady=(10,20))
-        user2_button.grid(row=1, column=1, padx = 10,pady=(10,20))
-        user3_button.grid(row=1, column=2, padx=10, pady=(10,20))
+        user1_button.grid(row=1, column=0, padx=10, pady=(10, 20))
+        user2_button.grid(row=1, column=1, padx=10, pady=(10, 20))
+        user3_button.grid(row=1, column=2, padx=10, pady=(10, 20))

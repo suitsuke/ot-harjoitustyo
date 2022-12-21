@@ -27,7 +27,7 @@ class SettingsView:
 
     def _handle_userbutton_click(self):
         entry_value = self._username_entry.get()
-        if len(entry_value) >15:
+        if len(entry_value) > 15:
             print("Maximum length 15 characters.")
             return
         self._service.change_username(self._user, entry_value)
@@ -51,7 +51,8 @@ class SettingsView:
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         label = ttk.Label(master=self._frame, text="Settings")
-        label2 = ttk.Label(master=self._frame, text="Change your actions or username. Max. length 15 characters.")
+        label2 = ttk.Label(
+            master=self._frame, text="Change your actions or username. Max. length 15 characters.")
 
         back_button = ttk.Button(
             master=self._frame,
@@ -99,22 +100,22 @@ class SettingsView:
 
         label.grid(row=0, column=1, pady=10)
         label2.grid(row=1, column=0, pady=10, columnspan=3, padx=5)
-        back_button.grid(row=9, column=1, pady=(0,10))
+        back_button.grid(row=9, column=1, pady=(0, 10))
 
-        username_label.grid(row=2, column=0, padx=(5,0))
+        username_label.grid(row=2, column=0, padx=(5, 0))
         self._username_entry.grid(row=2, column=1)
-        username_button.grid(row=2, column=2, padx=(0,5))
+        username_button.grid(row=2, column=2, padx=(0, 5))
 
-        action1_label.grid(row=5, column=0, padx=(5,0))
+        action1_label.grid(row=5, column=0, padx=(5, 0))
         self._action1_entry.grid(row=5, column=1)
-        action1_button.grid(row=5, column=2, padx=(0,5))
+        action1_button.grid(row=5, column=2, padx=(0, 5))
 
         action2_label.grid(row=6, column=0, padx=5)
         self._action2_entry.grid(row=6, column=1)
-        action2_button.grid(row=6, column=2, padx=(0,5))
+        action2_button.grid(row=6, column=2, padx=(0, 5))
 
         action3_label.grid(row=7, column=0, padx=5)
         self._action3_entry.grid(row=7, column=1)
-        action3_button.grid(row=7, column=2, padx=(0,5))
+        action3_button.grid(row=7, column=2, padx=(0, 5))
 
         remove_button.grid(row=8, column=1, pady=5)

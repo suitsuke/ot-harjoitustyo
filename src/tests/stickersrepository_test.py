@@ -73,7 +73,6 @@ class TestStickersRepository(unittest.TestCase):
         self.assertEqual(self.repo.find_all_by_user(1), [])
         self.assertEqual(self.repo.find_all_by_user(2), [])
 
-
     def test_find_all_by_user(self):
         self.repo.add_sticker(2, 3)
         self.repo.add_sticker(1, 1)

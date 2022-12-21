@@ -27,7 +27,8 @@ class MenuView:
         if added_sticker == -1:
             print("You have collected all stickers!")
         else:
-            print("Sticker", added_sticker, "added to user", self.service.find_username(self.user))
+            print("Sticker", added_sticker, "added to user",
+                  self.service.find_username(self.user))
 
     def pack(self):
         self._frame.pack(fill=constants.X)
@@ -63,7 +64,7 @@ class MenuView:
         )
         button_a1 = ttk.Button(
             master=self._frame,
-            text=self.service.find_action(self.user, 1), 
+            text=self.service.find_action(self.user, 1),
             command=lambda: self._handle_button_click(1)
         )
         button_a2 = ttk.Button(
@@ -78,9 +79,12 @@ class MenuView:
         )
 
         label.grid(row=0, column=1, pady=10)
-        button1.grid(row=2, column=2,padx=10, pady=10, sticky="nsew")  # login/back
-        button2.grid(row=2, column=0, padx=10, pady=10, sticky="nsew")  # collection
-        button3.grid(row=2, column=1,padx=10, pady=10, sticky="nsew")  # settings
+        button1.grid(row=2, column=2, padx=10, pady=10,
+                     sticky="nsew")  # login/back
+        button2.grid(row=2, column=0, padx=10, pady=10,
+                     sticky="nsew")  # collection
+        button3.grid(row=2, column=1, padx=10, pady=10,
+                     sticky="nsew")  # settings
 
         button_a1.grid(row=1, column=0, padx=10, pady=5)
         button_a2.grid(row=1, column=1, padx=10, pady=5)
