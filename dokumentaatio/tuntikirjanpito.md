@@ -23,4 +23,5 @@
 | 19.12. | 1  | käyttöliittymän säätäminen, remove-all-stickers-toiminto|
 | 20.12. | 2.5  | käyttöliittymän siistiminen, syötettyjen tekstien pituuden rajoitus, dokumentaatiota|
 | 21.12. | 2  | dokumentaatiota (arkkitehtuuri, sekvenssikaavioita, pakkausrakenne)|
-| Summa | 37.5  | tuntia|
+| 23.12. | 1.5  | dokumentaatiota, repon siistimistä, releasen teko, viimeistelyä|
+| Summa | 39  | tuntia|

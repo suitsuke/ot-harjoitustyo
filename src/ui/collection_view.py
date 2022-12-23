@@ -5,7 +5,17 @@ from services.stickerservice import StickerService
 
 
 class CollectionView:
+    """Kokoelma-näkymästä vastaava luokka.
+    """
     def __init__(self, root, handle_menu, service, user):
+        """Kokoelma-näkymän generointi.
+
+        Args:
+            root (tkinter-window): Tkinter-pääikkuna
+            handle_menu (function): funktio jolla siirrytään menu-näkymään
+            service (StickerService): StickerService-olio
+            user (int): käyttäjä-id
+        """
         self._root = root
         self._handle_menu = handle_menu
         self._frame = None
@@ -19,15 +29,9 @@ class CollectionView:
     def destroy(self):
         self._frame.destroy()
 
-    # def display_description(self, id:int):
-    #    description = ttk.Label(master=self._frame, text=f"___Sticker-description for {id}")
-    #    description.grid(row=6, column=2)
-
-    # def display_empty(self):
-    #    description = ttk.Label(master=self._frame, text=f"Hover over a sticker!")
-    #    description.grid(row=6, column=2)
-
     def _initialize(self):
+        """Ikkunaan piirtyvistä objekteista vastaava metodi. Kaikki näkyvät objektit tähän.
+        """
         self._frame = ttk.Frame(master=self._root)
         #text and buttons
         label = ttk.Label(master=self._frame, text=f"Your Stickers")

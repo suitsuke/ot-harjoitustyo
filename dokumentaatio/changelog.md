@@ -54,6 +54,6 @@
 - testausdokumentti ja käyttöohje kirjoitettu
 - arkkitehtuuri.md päivitetty ja lisätty uusi rakennekaavio ja muutama sekvenssikaavio
 - todo: tietokantojen alustus ennen releasea
-- todo: lisää docstringia?
-- readme
+- lisää docstringia lisätty mm. käyttöliittymään
+- readme päivitetty
 - testaus cubblilla

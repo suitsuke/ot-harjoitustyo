@@ -3,7 +3,17 @@ from services.stickerservice import StickerService
 
 
 class LoginView:
+    """Kirjautumisnäkymän luokka.
+    """
     def __init__(self, root, handle_menu, change_user, service):
+        """Käynnistää kirjautumisnäkymän olion.
+
+        Args:
+            root (tkinter-window): Tkinter-ikkuna
+            handle_menu (function): Funktio jolla siirrytään menu-näkymään.
+            change_user (function): Funktio, jolla vaihdetaan aktiivista käyttäjää.
+            service (StickerService): StickerService-olio
+        """
         self._root = root
         self._handle_menu = handle_menu
         self._frame = None
@@ -13,6 +23,11 @@ class LoginView:
         self._initialize()
 
     def change_user(self, user):
+        """Vaihtaa aktiivisen käyttäjän toiseksi
+
+        Args:
+            user (int): Uusi käyttäjä-id.
+        """
         self._change_user(user)
         self._handle_menu()
         print(f"User {self._service.find_username(user)} logged in.")

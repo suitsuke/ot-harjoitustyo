@@ -3,7 +3,19 @@ from services.stickerservice import StickerService
 
 
 class MenuView:
+    """Päävalikon näkymästä vastaava luokka.
+    """
     def __init__(self, root, handle_login, handle_collection, handle_settings, user, service):
+        """Päävalikon olion luonti.
+
+        Args:
+            root (tkintr-window): Tkinterin pääikkuna
+            handle_login (function): kirjautumisnäkymän käynnistävä metodi
+            handle_collection (function): kokoelmanäkymän käynnistävä metodi
+            handle_settings (function): asetusnäkymän käynnistävä metodi
+            user (int): sen hetkisen kirjautuneen käyttäjän id
+            service (StickerService): StickerService-olio joka hoitaa ohjelman logiikkaa
+        """
         self._root = root
         self._handle_login = handle_login
         self._handle_collection = handle_collection
@@ -15,15 +27,17 @@ class MenuView:
         self._initialize()
 
     def _handle_button_click(self, button_value):
+        """Metodi joka huolehtii tarran lisäämisesta kun painetaan tiettyä toimintonappia
+
+        Args:
+            button_value (int): Painetun napin numero (1-3)
+        """
         if button_value == 1:
             added_sticker = self.service.add_random_sticker(self.user)
-            #print("sticker", added_sticker, "added to user", self.user)
         elif button_value == 2:
             added_sticker = self.service.add_random_sticker(self.user)
-            #print("sticker", added_sticker, "added to user", self.user)
         elif button_value == 3:
             added_sticker = self.service.add_random_sticker(self.user)
-            #print("sticker", added_sticker, "added to user", self.user)
         if added_sticker == -1:
             print("You have collected all stickers!")
         else:
@@ -37,6 +51,8 @@ class MenuView:
         self._frame.destroy()
 
     def _initialize(self):
+        """Käynnistää graafiset komponentit. Kaikki näytettävät objektit piirretään tässä.
+        """
         self._frame = ttk.Frame(master=self._root)
         self._frame.rowconfigure(0, weight=1)
         self._frame.rowconfigure(1, weight=8)

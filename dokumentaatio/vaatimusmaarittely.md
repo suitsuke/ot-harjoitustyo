@@ -3,14 +3,15 @@
 ## Sovelluksen tarkoitus
 
 Yksinkertainen tehtäväseuranta. Sovelluksen avulla käyttäjä voi kerätä suorituskertoja erilaisista onnistuneista arjen askareista, kuten siististi syöminen, hampaiden pesu, pukeutuminen, nukkumaan meneminen. 
-Jokaisesta suorituskerrasta saa satunnaisesti (tai puolisatunnaisesti) valitun tarran jota ei vielä ole aiemmin saanut tarrakirjaan.
+Jokaisesta suorituskerrasta saa satunnaisesti valitun tarran jota ei vielä ole aiemmin saanut tarrakirjaan. 
+Toiminnot tai askareet on käyttäjän itse säädettävissä tai valittavissa.
 
 Sovelluksen kohderyhmä on lapset niiden vanhempien avustuksella tai muut käyttäjät joilla on alentunut toimintakyky arjen askareissa.
 
 ## Käyttäjät
 
 Sovellusta voi käyttää useampi käyttäjä kirjautumalla tai vaihtamalla käyttäjää, ja 
-jokaisella käyttäjällä on eri historia ja tarrakokoelma.
+jokaisella käyttäjällä on eri tarrakokoelma.
 
 ## Käyttöliittymä
 
@@ -35,7 +36,8 @@ jokaisella käyttäjällä on eri historia ja tarrakokoelma.
 - Asetuksista voidaan poistaa kaikki saavutetut tarrat (tehty)
 
 ## Jatkokehitysideoita
-
+- Toiminnoissa voidaan valita kuva toiminnolle.
+- Käyttöliittymän graafinen päivitys väreillä ja ikoneilla tekstin sijasta
 - Collection-näkymässä tarran hoverointi näyttää tarran tekstikuvailun
 - Enemmän tarroja
 - Kirjautumiseen voidaan asettaa salasana tai haastava kertolasku

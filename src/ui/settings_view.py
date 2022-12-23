@@ -2,7 +2,17 @@ from tkinter import ttk, constants
 
 
 class SettingsView:
+    """Luokka joka hoitaa asetus-näkymän toiminnoista.
+    """
     def __init__(self, root, handle_menu, service, user):
+        """Käynnistää asetus-näkymän luomalla olion.
+
+        Args:
+            root (tkinter-window): Pääikkuna tkinter-ikkunana
+            handle_menu (function): funktio jota kutsumalla käyttöliittymä vaihtuu takaisin päävalikkoon
+            service (Stickerservice-object): Ohjelman StickerService-palvelu
+            user (int): Käyttäjätunnus joka on tällä hetkellä kirjautuneena.
+        """
         self._root = root
         self._handle_menu = handle_menu
         self._frame = None
@@ -22,10 +32,14 @@ class SettingsView:
         self._frame.destroy()
 
     def _handle_removebutton_click(self):
+        """Metodi jota kutsutaan kun "Remove all stickers"-nappia painetaan.
+        """
         self._service.remove_all_stickers(self._user)
         print("All stickers removed!")
 
     def _handle_userbutton_click(self):
+        """Metodi jota kutsutaan kun painetaan nappia jolla vaihdetaan käyttäjänimi.
+        """
         entry_value = self._username_entry.get()
         if len(entry_value) > 15:
             print("Maximum length 15 characters.")
@@ -34,6 +48,11 @@ class SettingsView:
         print("Username changed to", entry_value)
 
     def _handle_actionbutton_click(self, number: int):
+        """Metodi jota kutsutaan kun vaihdetaan toimintonappien tekstejä.
+
+        Args:
+            number (int): Toimintonappi jonka tekstiä muutetaan.
+        """
         if number == 1:
             entry_value = self._action1_entry.get()
         elif number == 2:
@@ -49,6 +68,8 @@ class SettingsView:
             print("Action changed to", entry_value)
 
     def _initialize(self):
+        """Näkymän käynnistävä metodi. Kaikki näytettävät objektit tulevat tänne.
+        """
         self._frame = ttk.Frame(master=self._root)
         label = ttk.Label(master=self._frame, text="Settings")
         label2 = ttk.Label(
