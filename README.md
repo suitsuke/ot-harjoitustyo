@@ -6,8 +6,11 @@ Sovelluksen avulla käyttäjä voi kerätä tarroja suoritetuista arkiaskareista
 
 Sovellus on kehitetty harjoitustyöksi Helsingin yliopiston Ohjelmistotekniikan kurssille syksyllä 2022.
 
-** Uusin [release](https://github.com/suitsuke/ot-harjoitustyo/releases/tag/viikko6) **
 
+## Releases
+** [Loppupalautus](https://github.com/suitsuke/ot-harjoitustyo/releases/tag/loppupalautus) **
+[Viikko 6](https://github.com/suitsuke/ot-harjoitustyo/releases/tag/viikko6)
+[Viikko 5](https://github.com/suitsuke/ot-harjoitustyo/releases/tag/viikko5.1) 
 
 ## Dokumentaatio
 
@@ -76,3 +79,5 @@ Pylintin tulosteen saat komennolla
 ```bash
 poetry run invoke lint
 ```
+
+
