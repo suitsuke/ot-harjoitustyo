@@ -7,6 +7,7 @@ from services.stickerservice import StickerService
 class CollectionView:
     """Kokoelma-näkymästä vastaava luokka.
     """
+
     def __init__(self, root, handle_menu, service, user):
         """Kokoelma-näkymän generointi.
 

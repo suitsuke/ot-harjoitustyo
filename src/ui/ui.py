@@ -6,11 +6,11 @@ from ui.settings_view import SettingsView
 from services.stickerservice import StickerService
 
 
-
 class UI:
     """Graafinen käyttöliittymä, joka kutsuu muita näkymiä. Tällä luokalla on yksi 
     StickerService-olio, joka annetaan argumenttina jokaiselle näkymälle kun niitä kutsutaan.
     """
+
     def __init__(self, root):
         self._root = root
         self._current_view = None

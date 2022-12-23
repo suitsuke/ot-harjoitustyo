@@ -5,6 +5,7 @@ from services.stickerservice import StickerService
 class MenuView:
     """Päävalikon näkymästä vastaava luokka.
     """
+
     def __init__(self, root, handle_login, handle_collection, handle_settings, user, service):
         """Päävalikon olion luonti.
 

@@ -4,6 +4,7 @@ from tkinter import ttk, constants
 class SettingsView:
     """Luokka joka hoitaa asetus-näkymän toiminnoista.
     """
+
     def __init__(self, root, handle_menu, service, user):
         """Käynnistää asetus-näkymän luomalla olion.
 

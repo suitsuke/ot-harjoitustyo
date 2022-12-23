@@ -5,6 +5,7 @@ from services.stickerservice import StickerService
 class LoginView:
     """Kirjautumisnäkymän luokka.
     """
+
     def __init__(self, root, handle_menu, change_user, service):
         """Käynnistää kirjautumisnäkymän olion.
 
