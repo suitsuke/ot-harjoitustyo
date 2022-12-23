@@ -2,7 +2,7 @@
 
 ## Stickers app
 
-Sovelluksen avulla käyttäjä voi kerätä tarroja suoritetuista arkiaskareista. Sovellusta voi käyttää muutama käyttäjä, ja kaikilla on oma tarrakokoelmansa.
+Sovelluksen avulla käyttäjä voi kerätä tarroja suoritetuista arkiaskareista. Käyttäjä voi itse asettaa itselleen nimen ja mitä kolmea askaretta hän haluaa suorittaa. Sovellusta voi käyttää muutama käyttäjä, ja kaikilla on oma tarrakokoelmansa.
 
 Sovellus on kehitetty harjoitustyöksi Helsingin yliopiston Ohjelmistotekniikan kurssille syksyllä 2022.
 
@@ -63,13 +63,16 @@ poetry update
 Testikattavuusraportin saa komennolla:
 
 ```bash
+poetry run invoke coverage
+```
+jonka jälkeen komento
+```bash
 poetry run invoke coverage-report
 ```
-
-Raportti generoidaan kansioon _htmlcov_.
+generoi raportin html-muodossa kansioon _htmlcov_.
 
 ### Pylint
 Pylintin tulosteen saat komennolla
 ```bash
-poetry run invoke pylint
+poetry run invoke lint
 ```
