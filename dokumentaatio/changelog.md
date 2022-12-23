@@ -24,7 +24,7 @@
 ## Viikko 5
 - repo + services osaa poistaa tarroja + automatisoitu testaus
 - servicellä on metodit lisätä tietty tarra ja lisätä random-tarra
-- todo: menun napit lisäävät tarran oikealle käyttäjälle (toiminee mutta tietokanta ei tallennu niin evt)
+- menun napit lisäävät tarran oikealle käyttäjälle
 - collection-ui tietää minkä käyttäjän collectionia näytetään
 - collection-ui osaa näyttää kaikki löytyneet tarrat tietyltä käyttäjältä
 - data/userstickers.db tallentaa tiedot kun ohjelma suljetaan
