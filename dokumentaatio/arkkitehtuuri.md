@@ -175,6 +175,9 @@ sequenceDiagram
 ### Muut toiminnallisuudet
 Käyttäjä painaa käyttöliittymän nappeja, käyttöliittymä kutsuu Services-oliota, joka kutsuu repositoryä joka huolehtii toiminnan toteuttamisesta.
 
+## Ulkoiset kirjastot
+
+Ohjelma käyttää ulkoisina kirjastoina Tkinteriä graafiseen käyttöliittymään, random-kirjastoa satunnaisten tarrojen generointiin, sekä kirjastoa PIL (Pillow) kuvien näyttämiseen ja muokkaamiseen Tkinterin kanssa yhteensopiviksi.
 
 ## Ohjelmaan jääneet heikkoudet
 
