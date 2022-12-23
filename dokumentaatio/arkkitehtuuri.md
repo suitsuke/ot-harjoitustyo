@@ -174,3 +174,9 @@ sequenceDiagram
 
 ### Muut toiminnallisuudet
 Käyttäjä painaa käyttöliittymän nappeja, käyttöliittymä kutsuu Services-oliota, joka kutsuu repositoryä joka huolehtii toiminnan toteuttamisesta.
+
+
+## Ohjelmaan jääneet heikkoudet
+Graafisen käyttöliittymän collection_view-koodissa kuvien näyttäminen voitaisiin todennäköisesti hoitaa jonkinlaisilla silmukoilla, jotka osaavat hakea ikoneita tarvittavan määrän oikeille sijainneilleen ilman suurta määrtää toisteista koodia. Tämä on myös välttämätöntä mikäli jatkokehityksessä kasvatetaan tarrojen määrää ja tehdään kokoelmasta näytön koon mukaan mukautuva.
+Osa metodeista, jotka palauttavat arvoja, Services- ja Repositories-luokissa palauttavat onnistuessaan arvon 1 ja epäonnistuessaan arvon -1. Nämä kannattaisi todennäköisesti hoitaa True ja False -arvoilla mieluummin kuin nykyisellä toteutuksella.
+
